@@ -180,7 +180,6 @@ void loop() {
         alpha4.writeDisplay();
         d = d + 1;
         delay(200);
-        int d = 0;
         scroll[0] = scroll[1];
         scroll[1] = scroll[2];
         scroll[2] = scroll[3];
@@ -192,7 +191,6 @@ void loop() {
         alpha4.writeDisplay();
         d = d + 1;
         delay(200);
-        int d = 0;
         scroll[0] = scroll[1];
         scroll[1] = scroll[2];
         scroll[2] = scroll[3];
@@ -204,7 +202,6 @@ void loop() {
         alpha4.writeDisplay();
         d = d + 1;
         delay(200);
-        int d = 0;
         scroll[0] = scroll[1];
         scroll[1] = scroll[2];
         scroll[2] = scroll[3];
@@ -216,7 +213,6 @@ void loop() {
         alpha4.writeDisplay();
         d = d + 1;
         delay(200);
-        int d = 0;
         scroll[0] = scroll[1];
         scroll[1] = scroll[2];
         scroll[2] = scroll[3];
@@ -228,7 +224,6 @@ void loop() {
         alpha4.writeDisplay();
         d = d + 1;
         delay(200);
-        int d = 0;
         scroll[0] = scroll[1];
         scroll[1] = scroll[2];
         scroll[2] = scroll[3];
@@ -240,7 +235,6 @@ void loop() {
         alpha4.writeDisplay();
         d = d + 1;
         delay(200);
-        int d = 0;
         scroll[0] = scroll[1];
         scroll[1] = scroll[2];
         scroll[2] = scroll[3];
@@ -252,7 +246,6 @@ void loop() {
         alpha4.writeDisplay();
         d = d + 1;
         delay(200);
-        int d = 0;
         scroll[0] = scroll[1];
         scroll[1] = scroll[2];
         scroll[2] = scroll[3];
@@ -264,7 +257,6 @@ void loop() {
         alpha4.writeDisplay();
         d = d + 1;
         delay(200);
-        int d = 0;
         scroll[0] = scroll[1];
         scroll[1] = scroll[2];
         scroll[2] = scroll[3];
