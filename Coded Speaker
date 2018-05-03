@@ -1,0 +1,41 @@
+/*
+   pilot0674 creation
+   *~*~*~*~*~*~*~*~*~*
+   ~THE CODED SPEAKER~
+   *~*~*~*~*~*~*~*~*~*
+    
+   Assembly:
+   Connect a Adafruit 14-Segment display
+   to the board. Connect VCC and 5V
+   to Power, GND to ground, SDA
+   to Analog 4 (A4) and SCL to
+   Analog 5. Then, connect a keypad
+   to the board. Change the key map
+   format to the layout of your keypad.
+   Make sure that each pin on your
+   keypad is connected to your MetroMini.
+   Finally, connect a potentiometer to your
+   board. Connect the power input from
+   Digital pin 9 on your MetroMini,
+   connect ground to ground, and connect
+   the output of your potentiometer to
+   power of the speaker, then connect
+   ground on your speaker to ground.
+ 
+   NOTE: 14 segment displays short
+   out VERY easily. make sure you
+   disconnect your MetroMini from
+   power until you have properly
+   set up your 14 segment display.
+
+*/
+
+void setup() {
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
