@@ -29,13 +29,50 @@
    set up your 14 segment display.
 
 */
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_LEDBackpack.h>
+#include <Keypad.h>
+const byte ROWS = 4;
+const byte COLS = 4;
+char keys[ROWS][COLS] = {
+  {'1', '2', '3', 'A'},
+  {'4', '5', '6', 'B'},
+  {'7', '8', '9', 'C'},
+  {'0', 'F', 'E', 'D'}
+};
+char code[4] = {0, 6, 7, 4};
+char input[4] = {' ', ' ', ' ', ' '};
+int16_t wrong[13] = {'W', 'R', 'O', 'N', 'G', ' ', 'C', 'O', 'D', 'E', ' ', ' ', ' '};
+int16_t cleared[10] = {'C', 'L', 'E', 'A', 'R', 'E', 'D', ' ', ' ', ' '};
+int16_t correct[10] = {'C', 'O', 'R', 'R', 'E', 'C, 'T', ' ', ' ', ' '};
+int16_t locked[9] = {'L', 'O', 'C', 'K', 'E', 'D', ' ', ' ', ' '};
+char scroll[4] = {' ', ' ', ' ', ' '};
+char mode[1] = {0};
+byte rowPins[ROWS] = {5, 4, 3, 2};
+byte colPins[COLS] = {9, 8, 7, 6};
+Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
+Adafruit_AlphaNum4 alpha4 = Adafruit_AlphaNum4();
 
 void setup() {
-  // put your setup code here, to run once:
-
+  Serial.begin(9600);
+  alpha4.begin(0x70);
+  alpha4.clear();
+  alpha4.writeDisplay();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  char key = keypad.getKey();
+  if (mode[0] == 2) {
+    digitalWrite(9, HIGH);
+  }
+  else {
+    digitalWrite(9, LOW);
+  }
+  if (key) {
+    if (key == 'A') {
+      mode[0] = 0;
+      
+    }
+  }
 }
