@@ -49,8 +49,8 @@ void beep() {
   tone(1, 600, 100);
 }
 void showDisplay(int32_t z, int x) {
+  int display = 0;
   if (display <= x) {
-    int display = 0;
     scroll[0] = scroll[1];
     scroll[1] = scroll[2];
     scroll[2] = scroll[3];
