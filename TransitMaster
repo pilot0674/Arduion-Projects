@@ -1,8 +1,70 @@
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_LEDBackpack.h>
+#include <Keypad.h>
+const byte ROWS = 4;
+const byte COLS = 4;
+char keys[ROWS][COLS] = {
+  {'1', '2', '3', 'A'},
+  {'4', '5', '6', 'B'},
+  {'7', '8', '9', 'C'},
+  {'0', 'F', 'E', 'D'}
+};
+char scroll[4] = {' ', ' ', ' ', ' '};
+int16_t dexterst[13] = {'D','E','X','T','E','R',' ','S','T','R','E','E','T'};
+int16_t hicksave[12] = {'H','I','C','K','S',' ','A','V','E','N','U','E'};
+int32_t medfordst[28] = {'M','E','D','F','O','R','D',' ','S','T','E','E','T',' ','-',' ','T','U','F','T','S',' ','S','Q','U','A','R','E'};
+byte rowPins[ROWS] = {5, 4, 3, 2};
+byte colPins[COLS] = {9, 8, 7, 6};
+Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
+Adafruit_AlphaNum4 alpha4 = Adafruit_AlphaNum4();
 void setup() {
   pinMode(1, OUTPUT);
   digitalWrite(1, HIGH);
   tone(1, 600, 100);
+  Serial.begin(9600);
+  alpha4.begin(0x70);
+  alpha4.clear();
+  alpha4.writeDisplay();
 }
 
 void loop() {
+  char key = keypad.getKey();
+  if (key) {
+    if (key == '1') {
+      beep();
+      showDisplay(dexterst, 12);
+    }
+    if (key == '2') {
+      beep();
+      showDisplay(hicksave, 11);
+    }
+    if (key == '3') {
+      beep();
+      showDisplay(medfordst, 27);
+    }
+  }
+}
+void beep() {
+  tone(1, 600, 100);
+}
+void showDisplay(char z, int x) {
+  if (display <= x) {
+    int display = 0;
+    scroll[0] = scroll[1];
+    scroll[1] = scroll[2];
+    scroll[2] = scroll[3];
+    scroll[3] = z[display];
+    alpha4.writeDigitAscii(3, scroll[3]);
+    alpha4.writeDigitAscii(2, scroll[2]);
+    alpha4.writeDigitAscii(1, scroll[1]);
+    alpha4.writeDigitAscii(0, scroll[0]);
+    alpha4.writeDisplay();
+    display++
+    delay(100);
+  }
+  else {
+    alpha4.clear();
+    alpha4.writerDisplay();
+  }
 }
