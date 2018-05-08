@@ -1,0 +1,8 @@
+void setup() {
+  pinMode(1, OUTPUT);
+  digitalWrite(1, HIGH);
+  tone(1, 600, 100);
+}
+
+void loop() {
+}
