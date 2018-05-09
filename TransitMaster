@@ -406,10 +406,6 @@ void loop() {
       }
     }
     if (key == 'D') {
-      scroll[0] = scroll[1];
-        scroll[1] = scroll[2];
-        scroll[2] = scroll[3];
-        scroll[3] = woodsiderd[dis];
       alpha4.clear();
       alpha4.writeDisplay();
       tone(1, 600, 100);
