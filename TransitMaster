@@ -25,7 +25,7 @@ int32_t mainst[31] = {'G', 'E', 'O', 'R', 'G', 'E', ' ', 'S', 'T', 'R', 'E', 'E'
 int32_t wedgemererd[17] = {'W', 'E', 'D', 'G', 'E', 'M', 'E', 'R', 'E', ' ', 'R', 'O', 'A', 'D', ' ', ' ', ' '};
 int32_t marstonst[17] = {'M', 'A', 'R', 'S', 'T', 'O', 'N', ' ', 'S', 'T', 'R', 'E', 'E', 'T', ' ', ' ', ' '};
 int32_t winthropst[18] = {'W', 'I', 'N', 'T', 'H', 'R', 'O', 'P', ' ', 'S', 'T', 'R', 'E', 'E', 'T', ' ', ' ', ' '};
-int32_t 305winthrop[22] = {'3', '0', '5', ' ', 'W', 'I', 'N', 'T', 'H', 'R', 'O', 'P', ' ', 'S', 'T', 'R', 'E', 'E', 'T', ' ', ' ', ' '};
+int32_t winthrop[22] = {'3', '0', '5', ' ', 'W', 'I', 'N', 'T', 'H', 'R', 'O', 'P', ' ', 'S', 'T', 'R', 'E', 'E', 'T', ' ', ' ', ' '};
 int16_t lawrencerd[16] = {'L', 'A', 'W', 'R', 'E', 'N', 'C', 'E', ' ', 'R', 'O', 'A', 'D', ' ', ' ', ' '};
 int16_t woodsiderd[16] = {'W', 'O', 'O', 'D', 'S', 'I', 'D', 'E', ' ', 'R', 'O', 'A', 'D', ' ', ' ', ' '};
 byte rowPins[ROWS] = {5, 4, 3, 2};
@@ -366,7 +366,7 @@ void loop() {
         scroll[0] = scroll[1];
         scroll[1] = scroll[2];
         scroll[2] = scroll[3];
-        scroll[3] = 305winthrop[dis];
+        scroll[3] = winthrop[dis];
         alpha4.writeDigitAscii(3, scroll[3]);
         alpha4.writeDigitAscii(2, scroll[2]);
         alpha4.writeDigitAscii(1, scroll[1]);
