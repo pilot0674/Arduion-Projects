@@ -12,9 +12,9 @@ char keys[ROWS][COLS] = {
 };
 int dis = 0;
 char scroll[4] = {' ', ' ', ' ', ' '};
-int16_t dexterst[13] = {'D', 'E', 'X', 'T', 'E', 'R', ' ', 'S', 'T', 'R', 'E', 'E', 'T'};
-int16_t hicksave[12] = {'H', 'I', 'C', 'K', 'S', ' ', 'A', 'V', 'E', 'N', 'U', 'E'};
-int32_t medfordst[28] = {'M', 'E', 'D', 'F', 'O', 'R', 'D', ' ', 'S', 'T', 'E', 'E', 'T', ' ', '-', ' ', 'T', 'U', 'F', 'T', 'S', ' ', 'S', 'Q', 'U', 'A', 'R', 'E'};
+int16_t dexterst[16] = {'D', 'E', 'X', 'T', 'E', 'R', ' ', 'S', 'T', 'R', 'E', 'E', 'T', ' ', ' ', ' '};
+int16_t hicksave[15] = {'H', 'I', 'C', 'K', 'S', ' ', 'A', 'V', 'E', 'N', 'U', 'E', ' ', ' ', ' '};
+int32_t medfordst[31] = {'M', 'E', 'D', 'F', 'O', 'R', 'D', ' ', 'S', 'T', 'E', 'E', 'T', ' ', '-', ' ', 'T', 'U', 'F', 'T', 'S', ' ', 'S', 'Q', 'U', 'A', 'R', 'E', ' ', ' ', ' '};
 byte rowPins[ROWS] = {5, 4, 3, 2};
 byte colPins[COLS] = {9, 8, 7, 6};
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
@@ -33,11 +33,11 @@ void loop() {
   char key = keypad.getKey();
   if (key) {
     if (key == '1') {
-    alpha4.clear();
-    alpha4.writeDisplay();
-      beep();
+      tone(1, 600, 100);
+      alpha4.clear();
+      alpha4.writeDisplay();
       dis = 0;
-      if (dis <= 12) {
+      for (int a = 0; a <= 15; a++) {
         scroll[0] = scroll[1];
         scroll[1] = scroll[2];
         scroll[2] = scroll[3];
@@ -48,19 +48,20 @@ void loop() {
         alpha4.writeDigitAscii(0, scroll[0]);
         alpha4.writeDisplay();
         dis++;
-        delay(100);
-      }
-      else {
-        alpha4.clear();
-        alpha4.writeDisplay();
+        if (a == 15) {
+          delay(200);
+          alpha4.clear();
+          alpha4.writeDisplay();
+        }
+        delay(200);
       }
     }
     if (key == '2') {
-     alpha4.clear();
-    alpha4.writeDisplay();
-      beep();
+      alpha4.clear();
+      alpha4.writeDisplay();
+      tone(1, 600, 100);
       dis = 0;
-      if (dis <= 11) {
+      for (int b = 0; b <= 14; b++) {
         scroll[0] = scroll[1];
         scroll[1] = scroll[2];
         scroll[2] = scroll[3];
@@ -71,15 +72,38 @@ void loop() {
         alpha4.writeDigitAscii(0, scroll[0]);
         alpha4.writeDisplay();
         dis++;
-        delay(100);
+        if (b == 14) {
+          delay(200);
+          alpha4.clear();
+          alpha4.writeDisplay();
+        }
+        delay(200);
       }
-      else {
-        alpha4.clear();
+    }
+    if (key == '3') {
+      alpha4.clear();
+      alpha4.writeDisplay();
+      tone(1, 600, 100);
+      dis = 0;
+      for (int c = 0; c <= 31; c++) {
+        scroll[0] = scroll[1];
+        scroll[1] = scroll[2];
+        scroll[2] = scroll[3];
+        scroll[3] = medfordst[dis];
+        alpha4.writeDigitAscii(3, scroll[3]);
+        alpha4.writeDigitAscii(2, scroll[2]);
+        alpha4.writeDigitAscii(1, scroll[1]);
+        alpha4.writeDigitAscii(0, scroll[0]);
         alpha4.writeDisplay();
+        dis++;
+        if (c == 31) {
+          delay(200);
+          alpha4.clear();
+          alpha4.writeDisplay();
+        }
+        delay(200);
       }
     }
   }
 }
-void beep() {
-  tone(1, 600, 100);
-}
+
