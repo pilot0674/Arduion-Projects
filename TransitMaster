@@ -20,7 +20,7 @@ int32_t harvardst[17] = {'H', 'A', 'R', 'V', 'A', 'R', 'D', ' ', 'S', 'T', 'R', 
 int16_t bowenave[15] = {'B', 'O', 'W', 'E', 'N', ' ', 'A', 'V', 'E', 'N', 'U', 'E', ' ', ' ', ' '};
 int32_t hancockst[17] = {'H', 'A', 'N', 'C', 'O', 'C', 'K', ' ', 'S', 'T', 'R', 'E', 'E', 'T', ' ', ' ', ' '};
 int32_t hancockave[17] = {'H', 'A', 'N', 'C', 'O', 'C', 'K', ' ', 'A', 'V', 'E', 'N', 'U', 'E', ' ', ' ', ' '};
-int32_t georgest[31] = {'G', 'E', 'O', 'R', 'G', 'E', ' ', 'S', 'T', 'R', 'E', 'E', 'T', ' ', '-', ' ', 'B', 'R', 'O', 'O', 'K', 'S', ' ', 'P', 'A', 'R', 'K', ' ', ' ', ' '};
+int32_t georgest[30] = {'G', 'E', 'O', 'R', 'G', 'E', ' ', 'S', 'T', 'R', 'E', 'E', 'T', ' ', '-', ' ', 'B', 'R', 'O', 'O', 'K', 'S', ' ', 'P', 'A', 'R', 'K', ' ', ' ', ' '};
 int32_t mainst[31] = {'G', 'E', 'O', 'R', 'G', 'E', ' ', 'S', 'T', 'R', 'E', 'E', 'T', ' ', 'A' , 'T', ' ', 'M', 'A', 'I', 'N', ' ', 'S', 'T', 'R', 'E', 'E', 'T', ' ', ' ', ' '};
 int32_t wedgemererd[17] = {'W', 'E', 'D', 'G', 'E', 'M', 'E', 'R', 'E', ' ', 'R', 'O', 'A', 'D', ' ', ' ', ' '};
 int32_t marstonst[17] = {'M', 'A', 'R', 'S', 'T', 'O', 'N', ' ', 'S', 'T', 'R', 'E', 'E', 'T', ' ', ' ', ' '};
@@ -242,7 +242,7 @@ void loop() {
       alpha4.writeDisplay();
       tone(1, 600, 100);
       dis = 0;
-      for (int c = 0; c <= 31; c++) {
+      for (int c = 0; c <= 30; c++) {
         scroll[0] = scroll[1];
         scroll[1] = scroll[2];
         scroll[2] = scroll[3];
@@ -253,7 +253,7 @@ void loop() {
         alpha4.writeDigitAscii(0, scroll[0]);
         alpha4.writeDisplay();
         dis++;
-        if (c == 31) {
+        if (c == 30) {
           delay(200);
           alpha4.clear();
           alpha4.writeDisplay();
