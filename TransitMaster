@@ -30,8 +30,9 @@ int8_t winthropst[18] = {'W', 'I', 'N', 'T', 'H', 'R', 'O', 'P', ' ', 'S', 'T', 
 int8_t winthrop[22] = {'3', '0', '5', ' ', 'W', 'I', 'N', 'T', 'H', 'R', 'O', 'P', ' ', 'S', 'T', 'R', 'E', 'E', 'T', ' ', ' ', ' '};
 int8_t lawrencerd[16] = {'L', 'A', 'W', 'R', 'E', 'N', 'C', 'E', ' ', 'R', 'O', 'A', 'D', ' ', ' ', ' '};
 int8_t woodsiderd[16] = {'W', 'O', 'O', 'D', 'S', 'I', 'D', 'E', ' ', 'R', 'O', 'A', 'D', ' ', ' ', ' '};
-// The warnings 
+// The warnings which will notify bus operators
 int8_t offroute[12] = {'O', 'F', 'F', ' ', 'R', 'O', 'U', 'T', 'E', ' ', ' ', ' '};
+int8_t spdcritical[17] = {'S', 'P', 'E', 'E', 'D', ' ', 'C', 'R', 'I', 'T', 'I', 'C', 'A', 'L', ' ', ' ', ' '};
 byte rowPins[ROWS] = {5, 4, 3, 2};
 byte colPins[COLS] = {9, 8, 7, 6};
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
