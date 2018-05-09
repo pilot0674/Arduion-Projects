@@ -10,8 +10,10 @@ char keys[ROWS][COLS] = {
   {'7', '8', '9', 'C'},
   {'0', 'F', 'E', 'D'}
 };
+// This makes the screen scroll
 int dis = 0;
 char scroll[4] = {' ', ' ', ' ', ' '};
+// The announcments for teh 101
 int8_t dexterst[16] = {'D', 'E', 'X', 'T', 'E', 'R', ' ', 'S', 'T', 'R', 'E', 'E', 'T', ' ', ' ', ' '};
 int8_t hicksave[15] = {'H', 'I', 'C', 'K', 'S', ' ', 'A', 'V', 'E', 'N', 'U', 'E', ' ', ' ', ' '};
 int8_t medfordst[31] = {'M', 'E', 'D', 'F', 'O', 'R', 'D', ' ', 'S', 'T', 'E', 'E', 'T', ' ', '-', ' ', 'T', 'U', 'F', 'T', 'S', ' ', 'S', 'Q', 'U', 'A', 'R', 'E', ' ', ' ', ' '};
@@ -28,6 +30,8 @@ int8_t winthropst[18] = {'W', 'I', 'N', 'T', 'H', 'R', 'O', 'P', ' ', 'S', 'T', 
 int8_t winthrop[22] = {'3', '0', '5', ' ', 'W', 'I', 'N', 'T', 'H', 'R', 'O', 'P', ' ', 'S', 'T', 'R', 'E', 'E', 'T', ' ', ' ', ' '};
 int8_t lawrencerd[16] = {'L', 'A', 'W', 'R', 'E', 'N', 'C', 'E', ' ', 'R', 'O', 'A', 'D', ' ', ' ', ' '};
 int8_t woodsiderd[16] = {'W', 'O', 'O', 'D', 'S', 'I', 'D', 'E', ' ', 'R', 'O', 'A', 'D', ' ', ' ', ' '};
+// The warnings 
+int8_t offroute[12] = {'O', 'F', 'F', ' ', 'R', 'O', 'U', 'T', 'E', ' ', ' ', ' '};
 byte rowPins[ROWS] = {5, 4, 3, 2};
 byte colPins[COLS] = {9, 8, 7, 6};
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
@@ -36,7 +40,6 @@ void setup() {
   pinMode(1, OUTPUT);
   digitalWrite(1, HIGH);
   tone(1, 600, 100);
-  Serial.begin(9600);
   alpha4.begin(0x70);
   alpha4.clear();
   alpha4.writeDisplay();
