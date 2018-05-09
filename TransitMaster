@@ -46,10 +46,6 @@ void loop() {
   char key = keypad.getKey();
   if (key) {
     if (key == '1') {
-      scroll[0] = "";
-      scroll[1] = "";
-      scroll[2] = "";
-      scroll[3] = "";
       tone(1, 600, 100);
       alpha4.clear();
       alpha4.writeDisplay();
@@ -74,10 +70,6 @@ void loop() {
       }
     }
     if (key == '2') {
-      scroll[0] = "";
-      scroll[1] = "";
-      scroll[2] = "";
-      scroll[3] = "";
       alpha4.clear();
       alpha4.writeDisplay();
       tone(1, 600, 100);
@@ -102,10 +94,6 @@ void loop() {
       }
     }
     if (key == '3') {
-      scroll[0] = "";
-      scroll[1] = "";
-      scroll[2] = "";
-      scroll[3] = "";
       alpha4.clear();
       alpha4.writeDisplay();
       tone(1, 600, 100);
@@ -130,10 +118,6 @@ void loop() {
       }
     }
     if (key == 'A') {
-      scroll[0] = "";
-      scroll[1] = "";
-      scroll[2] = "";
-      scroll[3] = "";
       alpha4.clear();
       alpha4.writeDisplay();
       tone(1, 600, 100);
@@ -158,10 +142,6 @@ void loop() {
       }
     }
     if (key == '4') {
-      scroll[0] = "";
-      scroll[1] = "";
-      scroll[2] = "";
-      scroll[3] = "";
       alpha4.clear();
       alpha4.writeDisplay();
       tone(1, 600, 100);
@@ -186,10 +166,6 @@ void loop() {
       }
     }
     if (key == '5') {
-      scroll[0] = "";
-      scroll[1] = "";
-      scroll[2] = "";
-      scroll[3] = "";
       alpha4.clear();
       alpha4.writeDisplay();
       tone(1, 600, 100);
@@ -214,10 +190,6 @@ void loop() {
       }
     }
     if (key == '6') {
-      scroll[0] = "";
-      scroll[1] = "";
-      scroll[2] = "";
-      scroll[3] = "";
       alpha4.clear();
       alpha4.writeDisplay();
       tone(1, 600, 100);
@@ -242,10 +214,6 @@ void loop() {
       }
     }
     if (key == 'B') {
-      scroll[0] = "";
-      scroll[1] = "";
-      scroll[2] = "";
-      scroll[3] = "";
       alpha4.clear();
       alpha4.writeDisplay();
       tone(1, 600, 100);
@@ -270,10 +238,6 @@ void loop() {
       }
     }
     if (key == '7') {
-      scroll[0] = "";
-      scroll[1] = "";
-      scroll[2] = "";
-      scroll[3] = "";
       alpha4.clear();
       alpha4.writeDisplay();
       tone(1, 600, 100);
@@ -298,10 +262,6 @@ void loop() {
       }
     }
     if (key == '8') {
-      scroll[0] = "";
-      scroll[1] = "";
-      scroll[2] = "";
-      scroll[3] = "";
       alpha4.clear();
       alpha4.writeDisplay();
       tone(1, 600, 100);
@@ -326,10 +286,6 @@ void loop() {
       }
     }
     if (key == '9') {
-      scroll[0] = "";
-      scroll[1] = "";
-      scroll[2] = "";
-      scroll[3] = "";
       alpha4.clear();
       alpha4.writeDisplay();
       tone(1, 600, 100);
@@ -354,10 +310,6 @@ void loop() {
       }
     }
     if (key == 'C') {
-      scroll[0] = "";
-      scroll[1] = "";
-      scroll[2] = "";
-      scroll[3] = "";
       alpha4.clear();
       alpha4.writeDisplay();
       tone(1, 600, 100);
@@ -382,10 +334,6 @@ void loop() {
       }
     }
     if (key == '0') {
-      scroll[0] = "";
-      scroll[1] = "";
-      scroll[2] = "";
-      scroll[3] = "";
       alpha4.clear();
       alpha4.writeDisplay();
       tone(1, 600, 100);
@@ -410,10 +358,6 @@ void loop() {
       }
     }
     if (key == 'F') {
-      scroll[0] = "";
-      scroll[1] = "";
-      scroll[2] = "";
-      scroll[3] = "";
       alpha4.clear();
       alpha4.writeDisplay();
       tone(1, 600, 100);
@@ -438,10 +382,6 @@ void loop() {
       }
     }
     if (key == 'E') {
-      scroll[0] = "";
-      scroll[1] = "";
-      scroll[2] = "";
-      scroll[3] = "";
       alpha4.clear();
       alpha4.writeDisplay();
       tone(1, 600, 100);
@@ -466,10 +406,10 @@ void loop() {
       }
     }
     if (key == 'D') {
-      scroll[0] = "";
-      scroll[1] = "";
-      scroll[2] = "";
-      scroll[3] = "";
+      scroll[0] = scroll[1];
+        scroll[1] = scroll[2];
+        scroll[2] = scroll[3];
+        scroll[3] = woodsiderd[dis];
       alpha4.clear();
       alpha4.writeDisplay();
       tone(1, 600, 100);
