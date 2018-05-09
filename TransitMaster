@@ -26,6 +26,7 @@ int32_t wedgemererd[17] = {'W', 'E', 'D', 'G', 'E', 'M', 'E', 'R', 'E', ' ', 'R'
 int32_t marstonst[17] = {'M', 'A', 'R', 'S', 'T', 'O', 'N', ' ', 'S', 'T', 'R', 'E', 'E', 'T', ' ', ' ', ' '};
 int32_t winthropst[18] = {'W', 'I', 'N', 'T', 'H', 'R', 'O', 'P', ' ', 'S', 'T', 'R', 'E', 'E', 'T', ' ', ' ', ' '};
 int32_t 305winthrop[22] = {'3', '0', '5', ' ', 'W', 'I', 'N', 'T', 'H', 'R', 'O', 'P', ' ', 'S', 'T', 'R', 'E', 'E', 'T', ' ', ' ', ' '};
+int16_t lawrencerd[16] = {'L', 'A', 'W', 'R', 'E', 'N', 'C', 'E', ' ', 'R', 'O', 'A', 'D', ' ', ' ', ' '};
 byte rowPins[ROWS] = {5, 4, 3, 2};
 byte colPins[COLS] = {9, 8, 7, 6};
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
@@ -372,6 +373,30 @@ void loop() {
         alpha4.writeDisplay();
         dis++;
         if (c == 22) {
+          delay(200);
+          alpha4.clear();
+          alpha4.writeDisplay();
+        }
+        delay(200);
+      }
+    }
+    if (key == 'E') {
+      alpha4.clear();
+      alpha4.writeDisplay();
+      tone(1, 600, 100);
+      dis = 0;
+      for (int c = 0; c <= 16; c++) {
+        scroll[0] = scroll[1];
+        scroll[1] = scroll[2];
+        scroll[2] = scroll[3];
+        scroll[3] = lawrencerd[dis];
+        alpha4.writeDigitAscii(3, scroll[3]);
+        alpha4.writeDigitAscii(2, scroll[2]);
+        alpha4.writeDigitAscii(1, scroll[1]);
+        alpha4.writeDigitAscii(0, scroll[0]);
+        alpha4.writeDisplay();
+        dis++;
+        if (c == 16) {
           delay(200);
           alpha4.clear();
           alpha4.writeDisplay();
