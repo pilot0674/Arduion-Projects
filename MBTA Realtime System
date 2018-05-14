@@ -53,6 +53,18 @@
       lat="42.411729" lon="-71.113765" stopId="5039"/>
       <stop tag="MainSt" title="George St @ Main St" shortTitle="George & Main"
       lat="42.411985" lon="-71.110741" stopId="5040"/>
+      <stop tag="MainSt" title="Main St @ George St" shortTitle="Main & George"
+      lat="42.411885" lon="-71.110648" stopId="5291"/>
+      <stop tag="StearnsAve" title="Main St @ Stearns Ave" shortTitle="Main & Stearns"
+      lat="42.410226" lon="-71.110170" stopId="5292"/>
+      <stop tag="WindsorRd" title="Main St @ Windsor Rd" shortTitle="Main & Windsor"
+      lat="42.408646" lon="-71.109482" stopId="5293"/>
+      <stop tag="WellesleySt" title="Main St @ Wellesley St" shortTitle="Main & Wellesley"
+      lat="42.407534" lon="-71.108982" stopId="5294"/>
+      <stop tag="PrincetonSt" title="Main St @ Princeton St" shortTitle="Main & Princeton"
+      lat="42.406379" lon="-71.108535" stopId="5295"/>
+      <stop tag="HarvardSt" title="Main St @ Harvard St" shortTitle="Main & Harvard"
+      lat="42.405183" lon="-71.108033" stopId="5296"/>
       <route tag="134" title="134"/>
     </body>
 </body>
