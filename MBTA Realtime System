@@ -27,6 +27,24 @@
       lat="42.421102" lon="-71.131192" stopId="6303"/>
       <stop tag="JohnsonAve" title="High St @ Johnson Ave" shortTitle="High & Johnson"
       lat="42.421556" lon="-71.134850" stopId="16305"/>
+      <stop tag="HighSt" title="Boston Ave @ High St" shortTitle="Boston & High"
+      lat="42.421061" lon="-71.136953" stopId="3513"/>
+      <stop tag="HarvardAve" title="Boston Ave @ Harvard Ave" shortTitle="Boston & Harvard"
+      lat="42.419806" lon="-71.134707" stopId="2369"/>
+      <stop tag="HoltonSt" title="Boston Ave @ Holton St" shortTitle="Boston & Holton"
+      lat="42.418889" lon="-71.133104" stopId="2370"/>
+      <stop tag="ArlingtonSt" title="Boston Ave @ Arlington St" shortTitle="Boston & Arlington"
+      lat="42.417907" lon="-71.131531" stopId="2371"/>
+      <stop tag="MysticValleyPkwy" title="Boston Ave @ Mystic Valley Pkwy" shortTitle="Boston & Mystic Valley"
+      lat="42.416435" lon="-71.129318" stopId="2372"/>
+      <stop tag="StoughtonSt" title="Boston Ave @ Stoughton St" shortTitle="Boston & Stoughton"
+      lat="42.415122" lon="-71.127318" stopId="2373"/>
+      <stop tag="NorthSt" title="Boston Ave @ North St" shortTitle="Boston & North"
+      lat="42.414199" lon="-71.125943" stopId="2374"/>
+      <stop tag="HillsdaleRd" title="Boston Ave @ Hillsdale Rd" shortTitle="Boston & Hillsdale"
+      lat="42.412874" lon="-71.123931" stopId="2375"/>
+      <stop tag="ChesterAve" title="Winthrop St @ Chester Ave" shortTitle="Winthrop & Chester"
+      lat="42.413402" lon="-71.120451" stopId="21411"/>
       <route tag="134" title="134"/>
     </body>
 </body>
