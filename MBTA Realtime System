@@ -119,6 +119,40 @@
         <stop tag="HarvardAve"/>
         <stop tag="HoltonSt"/>
         <stop tag="ArlingtonSt"/>
+        <stop tag="MysticValleyPkwy"/>
+        <stop tag="StoughtonSt"/>
+        <stop tag="NorthSt"/>
+        <stop tag="HillsdaleRd"/>
+        <stop tag="ChesterAve"/>
+        <stop tag="WinthropSt"/>
+        <stop tag="BurgetAve"/>
+        <stop tag="WedgemereRd"/>
+        <stop tag="MainSt"/>
+        <stop tag="GeorgeSt"/>
+        <stop tag="StearnsAve"/>
+        <stop tag="WindsorRd"/>
+        <stop tag="WellesleySt"/>
+        <stop tag="PrincetonSt"/>
+        <stop tag="HarvardSt"/>
+        <stop tag="MarionSt"/>
+        <stop tag="MedfordSt"/>
+        <stop tag="BowSt"/>
+        <stop tag="DexterSt"/>
+        <stop tag="HenrySt"/>
+        <stop tag="MorelandSt"/>
+        <stop tag="Broadway"/>
+        <stop tag="ThurstonSt"/>
+        <stop tag="TempleSt"/>
+        <stop tag="MarshallSt"/>
+        <stop tag="MontgomeryAve"/>
+        <stop tag="McGrathHwy"/>
+        <stop tag="MacArthurSt"/>
+        <stop tag="CrossSt"/>
+        <stop tag="GlenSt"/>
+        <stop tag="FranklinSt"/>
+        <stop tag="LincolnSt"/>
+        <stop tag="MtVernonSt"/>
+        <stop tag="Sullivan"/>
       </direction>
 
       <route tag="134" title="134"/>
