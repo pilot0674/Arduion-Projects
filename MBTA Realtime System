@@ -73,8 +73,54 @@
       lat="42.400703" lon="-71.104608" stopId="5299"/>
       <stop tag="DexterSt" title="Main St @ Dexter St" shortTitle="Main & Dexter"
       lat="42.398961" lon="-71.102199" stopId="5300"/>
-      <stop tag="Henry" title="Main St opp Henry St" shortTitle="Main & Henry"
+      <stop tag="HenrySt" title="Main St opp Henry St" shortTitle="Main & Henry"
       lat="42.398961" lon="-71.102199" stopId="5301"/>
+      <stop tag="MorelandSt" title="Main St opp Moreland St" shortTitle="Main & Moreland"
+      lat="42.396285" lon="-71.098762" stopId="5302"/>
+      <stop tag="Broadway" title="Main St @ Broadway" shortTitle="Winter Hill"
+      lat="42.395077" lon="-71.097725" stopId="5303"/>
+      <stop tag="ThurstonSt" title="Broadway @ Thurston St" shortTitle="Broadway & Thurston"
+      lat="42.393791" lon="-71.095927" stopId="2704"/>
+      <stop tag="TempleSt" title="Broadway opp Temple St" shortTitle="Broadway & Temple"
+      lat="42.392556" lon="-71.093555" stopId="2705"/>
+      <stop tag="MarshallSt" title="Broadway @ Marshall St" shortTitle="Broadway & Marshall"
+      lat="42.392159" lon="-71.092808" stopId="2706"/>
+      <stop tag="MontgomeryAve" title="Broadway @ Montgomery Ave" shortTitle="Broadway & Montgomery"
+      lat="42.390497" lon="-71.090264" stopId="2707"/>
+      <stop tag="McGrathHwy" title="Broadway @ McGrath Hwy" shortTitle="Broadway & McGrath"
+      lat="42.389745" lon="-71.088636" stopId="2708"/>
+      <stop tag="MacArthurSt" title="Broadway St @ MacArthur St" shortTitle="Broadway & MacArthur"
+      lat="42.389314" lon="-71.087679" stopId="2709"/>
+      <stop tag="CrossSt" title="Broadway @ Cross St" shortTitle="Broadway & Cross"
+      lat="42.388616" lon="-71.086110" stopId="2710"/>
+      <stop tag="GlenSt" title="Broadway @ Glen St" shortTitle="Broadway & Glen"
+      lat="42.387799" lon="-71.084331" stopId="2711"/>
+      <stop tag="FranklinSt" title="Broadway @ Franklin St" shortTitle="Broadway & Franklin"
+      lat="42.387051" lon="-71.082037" stopId="2712"/>
+      <stop tag="LincolnSt" title="Broadway @ Lincoln St" shortTitle="Broadway & Lincoln"
+      lat="42.386632" lon="-71.080640" stopId="2713"/>
+      <stop tag="MtVernon" title="Broadway @ Mt Vernon St" shortTitle="Broadway & Mt Vernon"
+      lat="42.386051" lon="-71.078667" stopId="2714"/>
+      <stop tag="Sullivan" title="Sullivan Square Upper Busway" shortTitle="Sullivan"
+      lat="42.384162" lon="-71.126134" stopId="2714"/>
+      <direction tag="sullivan" title="Sullivan Square" name="Inbound"useForUI="true">
+        <stop tag="BrooksSt"/>
+        <stop tag="ExterSt"/>
+        <stop tag="SuffolkSt"/>
+        <stop tag="300winthrop"/>
+        <stop tag="EssexSt"/>
+        <stop tag="WoburnSt"/>
+        <stop tag="WolcottSt"/>
+        <stop tag="MysticSt"/>
+        <stop tag="AllstonSt"/>
+        <stop tag="WarrenSt"/>
+        <stop tag="JohnsonAve"/>
+        <stop tag="HighSt"/>
+        <stop tag="HarvardAve"/>
+        <stop tag="HoltonSt"/>
+        <stop tag="ArlingtonSt"/>
+      </direction>
+
       <route tag="134" title="134"/>
     </body>
 </body>
