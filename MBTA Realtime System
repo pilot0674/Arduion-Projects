@@ -45,6 +45,14 @@
       lat="42.412874" lon="-71.123931" stopId="2375"/>
       <stop tag="ChesterAve" title="Winthrop St @ Chester Ave" shortTitle="Winthrop & Chester"
       lat="42.413402" lon="-71.120451" stopId="21411"/>
+      <stop tag="WinthropSt" title="George St @ Winthrop St" shortTitle="George & Winthrop"
+      lat="42.413402" lon="-71.119801" stopId="5038"/>
+      <stop tag="BurgetAve" title="George St @ Burget Ave" shortTitle="George & Burget"
+      lat="42.412849" lon="-71.116530" stopId="15038"/>
+      <stop tag="WedgemereRd" title="George St @ Wedgemere Rd" shortTitle="George & Wedgemere"
+      lat="42.411729" lon="-71.113765" stopId="5039"/>
+      <stop tag="MainSt" title="George St @ Main St" shortTitle="George & Main"
+      lat="42.411985" lon="-71.110741" stopId="5040"/>
       <route tag="134" title="134"/>
     </body>
 </body>
