@@ -19,6 +19,14 @@
       lat="42.421841" lon="-71.123212" stopId="6299"/>
       <stop tag="WolcottSt" title="High St @ Wolcott St" shortTitle="High & Wolcott"
       lat="42.421765" lon="-71.124862" stopId="6300"/>
+      <stop tag="MysticSt" title="High St @ Mystic St" shortTitle="High & Mystic"
+      lat="42.421751" lon="-71.126237" stopId="6301"/>
+      <stop tag="AllstonSt" title="High St @ Allston St" shortTitle="High & Allston"
+      lat="42.421539" lon="-71.128739" stopId="6302"/>
+      <stop tag="WarrenSt" title="High St @ Warren St - W Medford Sq" shortTitle="West Medford Square"
+      lat="42.421102" lon="-71.131192" stopId="6303"/>
+      <stop tag="JohnsonAve" title="High St @ Johnson Ave" shortTitle="High & Johnson"
+      lat="42.421556" lon="-71.134850" stopId="16305"/>
       <route tag="134" title="134"/>
     </body>
 </body>
