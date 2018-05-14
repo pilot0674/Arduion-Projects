@@ -65,6 +65,16 @@
       lat="42.406379" lon="-71.108535" stopId="5295"/>
       <stop tag="HarvardSt" title="Main St @ Harvard St" shortTitle="Main & Harvard"
       lat="42.405183" lon="-71.108033" stopId="5296"/>
+      <stop tag="MarionSt" title="Main St @ Marion St" shortTitle="Main & Marion"
+      lat="42.403599" lon="-71.107309" stopId="5297"/>
+      <stop tag="MedfordSt" title="Main St @ Medford St" shortTitle="Tufts Square"
+      lat="42.402070" lon="-71.106412" stopId="5298"/>
+      <stop tag="BowSt" title="Main St @ Bow St" shortTitle="Main & Bow"
+      lat="42.400703" lon="-71.104608" stopId="5299"/>
+      <stop tag="DexterSt" title="Main St @ Dexter St" shortTitle="Main & Dexter"
+      lat="42.398961" lon="-71.102199" stopId="5300"/>
+      <stop tag="Henry" title="Main St opp Henry St" shortTitle="Main & Henry"
+      lat="42.398961" lon="-71.102199" stopId="5301"/>
       <route tag="134" title="134"/>
     </body>
 </body>
