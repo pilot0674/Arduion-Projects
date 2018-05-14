@@ -4,7 +4,21 @@
       <route tag="94" title="94"/>
       <route tag="95" title="95"/>
       <route tag="101" title="101" color="8B008B" oppositeColor="ffffff"
-      latMin="42.429901" latMax="42.384162" lonMin="-71.126134" lonMax="-71.076632"> 
+      latMin="42.429901" latMax="42.384162" lonMin="-71.126134" lonMax="-71.076632">
+      <stop tag="MedfordHS" title="Winthrop St @ Brooks St - Medford HS" shortTitle="Winthrop & Brooks"
+      lat="42.427369" lon="-71.125920" stopId="9147"/>
+      <stop tag="ExterSt" title="Winthrop St @ Exeter St" shortTitle="Winthrop & Exeter"
+      lat="42.425346" lon="-71.123088" stopId="9149"/>
+      <stop tag="SuffolkSt" title="Winthrop St @ Suffolk St" shortTitle="Winthrop & Suffolk"
+      lat="42.423720" lon="-71.120981" stopId="9150"/>
+      <stop tag="300winthrop" title="300 Winthrop St" shortTitle="300 Winthrop"
+      lat="42.421720" lon="-71.118516" stopId="5008"/>
+      <stop tag="EssexSt" title="High St @ Essex St" shortTitle="High & Essex"
+      lat="42.420835" lon="-71.119899" stopId="6298"/>
+      <stop tag="WoburnSt" title="High St @ Woburn St" shortTitle="High & Woburn"
+      lat="42.421841" lon="-71.123212" stopId="6299"/>
+      <stop tag="WolcottSt" title="High St @ Wolcott St" shortTitle="High & Wolcott"
+      lat="42.421765" lon="-71.124862" stopId="6300"/>
       <route tag="134" title="134"/>
     </body>
 </body>
