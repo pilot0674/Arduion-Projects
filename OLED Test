@@ -30,4 +30,5 @@ void showDis(int text, int clear, int color, int size) {
   display.setTextSize(size)
   display.setTextColor(color);
   display.println(text);
+  display.display();
 }
