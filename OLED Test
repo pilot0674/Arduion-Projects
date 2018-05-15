@@ -13,16 +13,20 @@ Adafruit_SSD1306 display(OLED_MOSI, OLED_CLK, OLED_DC, OLED_RESET, OLED_CS);
 void setup()   {
 
   display.begin(SSD1306_SWITCHCAPVCC);
-  showDisplay("WELCOME TO MISHAWUM STATION", 1, RED, 1);
-}
+  display.setTextColor(WHITE);
 
-void showDisplay(int text, int clrtxt, int color, int txtsize) {
-  if (cleartxt == 1) {
+  showDisplay("WELCOME TO MISHAWUM STATION", 1, 1, 0, 0);
+}
+void loop() {
+
+}
+void showDisplay(int text, int clrtxt, int txtsize, int cx, int cy) {
+  if (clrtxt == 1) {
     display.clearDisplay();
     display.display();
   }
-  display.setTextSize(txtsize)
-  display.setTextColor(color);
+  display.setCursor(cx, cy);
+  display.setTextSize(txtsize);
   display.println(text);
   display.display();
 }
