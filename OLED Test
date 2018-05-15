@@ -2,7 +2,7 @@
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
-
+int scroll = 300;
 #define OLED_MOSI   9
 #define OLED_CLK   10
 #define OLED_DC    11
@@ -11,20 +11,29 @@
 Adafruit_SSD1306 display(OLED_MOSI, OLED_CLK, OLED_DC, OLED_RESET, OLED_CS);
 
 void setup()   {
-
+  Serial.begin(9600);
+  display.clearDisplay();
+  display.display();
   display.begin(SSD1306_SWITCHCAPVCC);
   display.setTextColor(WHITE);
 
-  showDisplay("WELCOME TO MISHAWUM STATION", 1, 1, 0, 0);
-}
-void loop() {
 
 }
-void showDisplay(int text, int clrtxt, int txtsize, int cx, int cy) {
-  if (clrtxt == 1) {
+void loop() {
+  if (scroll >= -600) {
+    showDisplay("STAND BACK SULLIVAN SQUARE BUS", true, false, 3.5, scroll, 5);
+    scroll = scroll - 3;
+  }
+  else {
+    scroll = 300;
+  }
+}
+void showDisplay(const char *text, int clrtxt, int wrap, int txtsize, int cx, int cy) {
+  if (clrtxt == true) {
     display.clearDisplay();
     display.display();
   }
+  display.setTextWrap(wrap);
   display.setCursor(cx, cy);
   display.setTextSize(txtsize);
   display.println(text);
