@@ -16,12 +16,12 @@ void setup()   {
   showDisplay("WELCOME TO MISHAWUM STATION", 1, RED, 1);
 }
 
-void showDisplay(int text, int clear, int color, int size) {
-  if (clear == 1) {
+void showDisplay(int text, int clrtxt, int color, int txtsize) {
+  if (cleartxt == 1) {
     display.clearDisplay();
     display.display();
   }
-  display.setTextSize(size)
+  display.setTextSize(txtsize)
   display.setTextColor(color);
   display.println(text);
   display.display();
