@@ -120,8 +120,8 @@ void loop() {
       }
     }
     if (key == '7') {
-      for (int scroll = 225; scroll >= -500; scroll = scroll - 3) {
-        if (scroll >= -450) {
+      for (int scroll = 225; scroll >= -800; scroll = scroll - 3) {
+        if (scroll >= -800) {
           showDisplay("George Street - Brooks Park - Bus connection", true, false, 3.5, scroll, 5);
         }
         else {
@@ -131,8 +131,8 @@ void loop() {
       }
     }
     if (key == '8') {
-      for (int scroll = 225; scroll >= -300; scroll = scroll - 3) {
-        if (scroll >= -300) {
+      for (int scroll = 225; scroll >= -505; scroll = scroll - 3) {
+        if (scroll >= -505) {
           showDisplay("George Street at Main Street", true, false, 3.5, scroll, 5);
         }
         else {
