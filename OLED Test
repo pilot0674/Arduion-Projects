@@ -2,7 +2,7 @@
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
-int scroll = 300;
+#include <Keypad.h>
 #define OLED_MOSI   9
 #define OLED_CLK   10
 #define OLED_DC    11
@@ -20,7 +20,6 @@ char keys[ROWS][COLS] = {
 byte rowPins[ROWS] = {4, 3, 2, 1};
 byte colPins[COLS] = {8, 7, 6, 5};
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
-Adafruit_AlphaNum4 alpha4 = Adafruit_AlphaNum4();
 void setup()   {
   Serial.begin(9600);
   display.clearDisplay();
@@ -28,169 +27,184 @@ void setup()   {
   display.begin(SSD1306_SWITCHCAPVCC);
   display.setTextColor(WHITE);
 
-
 }
 void loop() {
-char key = keypad.getKey();
+  char key = keypad.getKey();
   if (key) {
     if (key == '1') {
-      if (scroll >= -300) {
-       showDisplay("Dexter Street", true, false, 3.5, scroll, 5);
-       scroll = scroll - 3;
-      }
-      else {
-        display.clearDisplay();
-        display.display();
+      for (int scroll = 225; scroll >= -300; scroll = scroll - 3) {
+        if (scroll >= -300) {
+          showDisplay("Dexter Street", true, false, 3.5, scroll, 5);
+        }
+        else {
+          display.clearDisplay();
+          display.display();
+        }
       }
     }
     if (key == '2') {
-      if (scroll >= -300) {
-       showDisplay("Hicks Avenue", true, false, 3.5, scroll, 5);
-       scroll = scroll - 3;
-      }
-      else {
-        display.clearDisplay();
-        display.display();
+      for (int scroll = 225; scroll >= -300; scroll = scroll - 3) {
+        if (scroll >= -300) {
+          showDisplay("Hicks Avenue", true, false, 3.5, scroll, 5);
+        }
+        else {
+          display.clearDisplay();
+          display.display();
+        }
       }
     }
     if (key == '3') {
-      if (scroll >= -600) {
-       showDisplay("Medford Street - Tufts Square", true, false, 3.5, scroll, 5);
-       scroll = scroll - 3;
-      }
-      else {
-        display.clearDisplay();
-        display.display();
+      for (int scroll = 225; scroll >= -600; scroll = scroll - 3) {
+        if (scroll >= -600) {
+          showDisplay("Medford Street - Tufts Square", true, false, 3.5, scroll, 5);
+        }
+        else {
+          display.clearDisplay();
+          display.display();
+        }
       }
     }
     if (key == 'A') {
-      if (scroll >= -300) {
-       showDisplay("Mayberry Avenue", true, false, 3.5, scroll, 5);
-       scroll = scroll - 3;
-      }
-      else {
-        display.clearDisplay();
-        display.display();
+      for (int scroll = 225; scroll >= -300; scroll = scroll - 3) {
+        if (scroll >= -300) {
+          showDisplay("Mayberry Avenue", true, false, 3.5, scroll, 5);
+        }
+        else {
+          display.clearDisplay();
+          display.display();
+        }
       }
     }
     if (key == '4') {
-      if (scroll >= -300) {
-       showDisplay("Harvard Street", true, false, 3.5, scroll, 5);
-       scroll = scroll - 3;
-      }
-      else {
-        display.clearDisplay();
-        display.display();
+      for (int scroll = 225; scroll >= -300; scroll = scroll - 3) {
+        if (scroll >= -300) {
+          showDisplay("Harvard Street", true, false, 3.5, scroll, 5);
+        }
+        else {
+          display.clearDisplay();
+          display.display();
+        }
       }
     }
     if (key == '5') {
-      if (scroll >= -250) {
-       showDisplay("Bowen Avenue", true, false, 3.5, scroll, 5);
-       scroll = scroll - 3;
-      }
-      else {
-        display.clearDisplay();
-        display.display();
+      for (int scroll = 225; scroll >= -250; scroll = scroll - 3) {
+        if (scroll >= -250) {
+          showDisplay("Bowen Avenue", true, false, 3.5, scroll, 5);
+        }
+        else {
+          display.clearDisplay();
+          display.display();
+        }
       }
     }
     if (key == '6') {
-      if (scroll >= -300) {
-       showDisplay("Hancock Street", true, false, 3.5, scroll, 5);
-       scroll = scroll - 3;
-      }
-      else {
-        display.clearDisplay();
-        display.display();
+      for (int scroll = 225; scroll >= -300; scroll = scroll - 3) {
+        if (scroll >= -300) {
+          showDisplay("Hancock Street", true, false, 3.5, scroll, 5);
+        }
+        else {
+          display.clearDisplay();
+          display.display();
+        }
       }
     }
     if (key == 'B') {
-      if (scroll >= -300) {
-       showDisplay("Hancock Avenue", true, false, 3.5, scroll, 5);
-       scroll = scroll - 3;
-      }
-      else {
-        display.clearDisplay();
-        display.display();
+      for (int scroll = 225; scroll >= -300; scroll = scroll - 3) {
+        if (scroll >= -300) {
+          showDisplay("Hancock Avenue", true, false, 3.5, scroll, 5);
+        }
+        else {
+          display.clearDisplay();
+          display.display();
+        }
       }
     }
     if (key == '7') {
-      if (scroll >= -400) {
-       showDisplay("George Street - Brooks Park - Bus connection", true, false, 3.5, scroll, 5);
-       scroll = scroll - 3;
-      }
-      else {
-        display.clearDisplay();
-        display.display();
+      for (int scroll = 225; scroll >= -500; scroll = scroll - 3) {
+        if (scroll >= -450) {
+          showDisplay("George Street - Brooks Park - Bus connection", true, false, 3.5, scroll, 5);
+        }
+        else {
+          display.clearDisplay();
+          display.display();
+        }
       }
     }
     if (key == '8') {
-      if (scroll >= -300) {
-       showDisplay("George Street at Main Street", true, false, 3.5, scroll, 5);
-       scroll = scroll - 3;
-      }
-      else {
-        display.clearDisplay();
-        display.display();
+      for (int scroll = 225; scroll >= -300; scroll = scroll - 3) {
+        if (scroll >= -300) {
+          showDisplay("George Street at Main Street", true, false, 3.5, scroll, 5);
+        }
+        else {
+          display.clearDisplay();
+          display.display();
+        }
       }
     }
     if (key == '9') {
-      if (scroll >= -300) {
-       showDisplay("Wedgemere Road", true, false, 3.5, scroll, 5);
-       scroll = scroll - 3;
-      }
-      else {
-        display.clearDisplay();
-        display.display();
+      for (int scroll = 225; scroll >= -300; scroll = scroll - 3) {
+        if (scroll >= -300) {
+          showDisplay("Wedgemere Road", true, false, 3.5, scroll, 5);
+        }
+        else {
+          display.clearDisplay();
+          display.display();
+        }
       }
     }
     if (key == 'C') {
-      if (scroll >= -300) {
-       showDisplay("Marston Street", true, false, 3.5, scroll, 5);
-       scroll = scroll - 3;
-      }
-      else {
-        display.clearDisplay();
-        display.display();
+      for (int scroll = 225; scroll >= -300; scroll = scroll - 3) {
+        if (scroll >= -300) {
+          showDisplay("Marston Street", true, false, 3.5, scroll, 5);
+        }
+        else {
+          display.clearDisplay();
+          display.display();
+        }
       }
     }
     if (key == '0') {
-      if (scroll >= -300) {
-       showDisplay("Winthrop Street", true, false, 3.5, scroll, 5);
-       scroll = scroll - 3;
-      }
-      else {
-        display.clearDisplay();
-        display.display();
+      for (int scroll = 225; scroll >= -300; scroll = scroll - 3) {
+        if (scroll >= -300) {
+          showDisplay("Winthrop Street", true, false, 3.5, scroll, 5);
+        }
+        else {
+          display.clearDisplay();
+          display.display();
+        }
       }
     }
     if (key == 'F') {
-      if (scroll >= -300) {
-       showDisplay("305 Winthrop Street", true, false, 3.5, scroll, 5);
-       scroll = scroll - 3;
-      }
-      else {
-        display.clearDisplay();
-        display.display();
+      for (int scroll = 225; scroll >= -300; scroll = scroll - 3) {
+        if (scroll >= -300) {
+          showDisplay("305 Winthrop Street", true, false, 3.5, scroll, 5);
+        }
+        else {
+          display.clearDisplay();
+          display.display();
+        }
       }
     }
     if (key == 'E') {
-      if (scroll >= -300) {
-       showDisplay("Lawrence Road", true, false, 3.5, scroll, 5);
-       scroll = scroll - 3;
-      }
-      else {
-        display.clearDisplay();
-        display.display();
+      for (int scroll = 225; scroll >= -300; scroll = scroll - 3) {
+        if (scroll >= -300) {
+          showDisplay("Lawrence Road", true, false, 3.5, scroll, 5);
+        }
+        else {
+          display.clearDisplay();
+          display.display();
+        }
       }
     }
     if (key == 'D') {
-      if (scroll >= -300) {
-       showDisplay("Woodside Road", true, false, 3.5, scroll, 5);
-       scroll = scroll - 3;
-      }
-      else {
-        display.clearDisplay();
-        display.display();
+      for (int scroll = 225; scroll >= -300; scroll = scroll - 3) {
+        if (scroll >= -300) {
+          showDisplay("Woodside Road", true, false, 3.5, scroll, 5);
+        }
+        else {
+          display.clearDisplay();
+          display.display();
+        }
       }
     }
   }
