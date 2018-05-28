@@ -1,0 +1,25 @@
+/* 
+ ******************************************
+ *     HALF DAY 101 BUS ANNOUNCMENTS      *
+ *              By pilot0674              *
+ ******************************************
+ This code is meant to be used to display announcments
+ on a Matrix for the half day 101 buses going from school
+
+ Items:
+ * 1 MetroMini
+ * 2 red jumpers
+ * 4 yellow jumpers
+ * 2 orange jumpers
+ * 2 Pushbuttons
+ */
+
+void setup() {
+  
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
