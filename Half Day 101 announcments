@@ -31,10 +31,34 @@ Adafruit_IS31FL3731 matrix = Adafruit_IS31FL3731();
 
 int downButton = digitalRead(2); //Reads pin 2 to see if the down button is pushed
 int upButton = digitalRead(3); //Reads pin 3 to see if the up button is pushed
+int enter = digitalRead(4); //Reads pin 4 to see if the enter button is being pushed,
 
 void setup() {
-  
-
+  Serial.begin(9600);
+  display.begin(SSD1306_SWITCHCAPVCC);
+  display.clearDisplay();
+  display.setTextWrap(true);
+  display.setCursor(0, 0);
+  display.setTextSize(1);
+  Serial.println("Searching items...");
+  display.println("Searching items...");
+  display.display();
+  delay(674);
+  Serial.println("Searching for Matrix...");
+  display.println("Searching for Matrix...");
+  display.display();
+  delay(100);
+  if (! matrix.begin()) {
+    Serial.println("IS31FL373 Matrix not found. Please connect your Matrix.");
+    display.println("IS31FL373 Matrix not found. Please connect your Matrix.");
+    display.display();
+#error("IS31FL373 Matrix not found. Please connect your Matrix.");
+  }
+  Serial.println("Matrix found");
+  display.println("Matrix found");
+  display.display();
+  delay(1000);
+  display.println("TYLERSYSTEMSCO");
 }
 
 void loop() {
