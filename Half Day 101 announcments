@@ -1,18 +1,36 @@
-/* 
+/*
  ******************************************
- *     HALF DAY 101 BUS ANNOUNCMENTS      *
- *              By pilot0674              *
+       HALF DAY 101 BUS ANNOUNCMENTS
+                By pilot0674
  ******************************************
- This code is meant to be used to display announcments
- on a Matrix for the half day 101 buses going from school
+  This code is meant to be used to display announcments
+  on a Matrix for the half day 101 buses going from school
 
- Items:
- * 1 MetroMini
- * 2 red jumpers
- * 4 yellow jumpers
- * 2 orange jumpers
- * 2 Pushbuttons
- */
+  Items:
+   1 MetroMini
+   2 red jumpers
+   4 yellow jumpers
+   2 orange jumpers
+   2 Pushbuttons
+*/
+// These includes the libraries required for this project
+#include <SPI.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_IS31FL3731.h>
+#include <Adafruit_SSD1306.h>
+//This identifies all the pins that the OLED will use
+#define OLED_MOSI   9 //Tells the OLED intiger that Data is connected to Digital pin 9
+#define OLED_CLK   10 //Tells the OLED intiger that Clk is connected to Digital pin 10
+#define OLED_DC    11 //Tells the OLED intiger that DC is connected to Digital pin 9
+#define OLED_CS    12 //Tells the OLED intiger that CS is connected to Digital pin 9
+#define OLED_RESET 13 //Tells the OLED intiger that Rst(Reset) is connected to Digital pin 9
+//This compacts all the data into an intiger which is used in the functions to operate the OLED and Matrix
+Adafruit_SSD1306 display(OLED_MOSI, OLED_CLK, OLED_DC, OLED_RESET, OLED_CS);
+Adafruit_IS31FL3731 matrix = Adafruit_IS31FL3731();
+
+int downButton = digitalRead(2); //Reads pin 2 to see if the down button is pushed
+int upButton = digitalRead(3); //Reads pin 3 to see if the up button is pushed
 
 void setup() {
   
@@ -20,6 +38,5 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
 
 }
