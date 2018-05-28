@@ -32,7 +32,7 @@ Adafruit_IS31FL3731 matrix = Adafruit_IS31FL3731();
 int downButton = digitalRead(2); //Reads pin 2 to see if the down button is pushed
 int upButton = digitalRead(3); //Reads pin 3 to see if the up button is pushed
 int enter = digitalRead(4); //Reads pin 4 to see if the enter button is being pushed,
-
+int ann = 0;
 void setup() {
   Serial.begin(9600);
   display.begin(SSD1306_SWITCHCAPVCC);
@@ -44,23 +44,225 @@ void setup() {
   display.println("Searching items...");
   display.display();
   delay(674);
+  display.clearDisplay();
   Serial.println("Searching for Matrix...");
   display.println("Searching for Matrix...");
   display.display();
   delay(100);
   if (! matrix.begin()) {
+    display.clearDisplay();
     Serial.println("IS31FL373 Matrix not found. Please connect your Matrix.");
     display.println("IS31FL373 Matrix not found. Please connect your Matrix.");
     display.display();
 #error("IS31FL373 Matrix not found. Please connect your Matrix.");
   }
+  display.clearDisplay();
   Serial.println("Matrix found");
   display.println("Matrix found");
   display.display();
-  delay(1000);
-  display.println("TYLERSYSTEMSCO");
+  delay(100);
 }
 
 void loop() {
+  if (upButton == HIGH) {
+    if (ann > 0) {
+      ann = ann - 1;
+    }
+  }
+  if (downButton == HIGH) {
+    if (ann < 33) {
+      ann = ann + 1;
+    }
+  }
+  if (enter == HIGH) {
+    if (ann == 0) {
+      playAnn("Brooks Street - Medford High School", 500, 100);
+    }
+  }
+  if (ann == 0) {
+    display.clearDisplay();
+    display.print("Brooks Street - Medford High School");
+    display.display();
+  }
+  else if (ann == 1) {
+    display.clearDisplay();
+    display.print("Exeter Street");
+    display.display();
+  }
+  else if (ann == 2) {
+    display.clearDisplay();
+    display.print("Suffolk Street");
+    display.display();
+  }
+  else if (ann == 3) {
+    display.clearDisplay();
+    display.print("300 Winthrop Street");
+    display.display();
+  }
+  else if (ann == 4) {
+    display.clearDisplay();
+    display.print("Essex Street");
+    display.display();
+  }
+  else if (ann == 5) {
+    display.clearDisplay();
+    display.print("Woburn Street");
+    display.display();
+  }
+  else if (ann == 6) {
+    display.clearDisplay();
+    display.print("Wolcott Street");
+    display.display();
+  }
+  else if (ann == 7) {
+    display.clearDisplay();
+    display.print("Mystic Street");
+    display.display();
+  }
+  else if (ann == 8) {
+    display.clearDisplay();
+    display.print("Warren Street");
+    display.display();
+  }
+  else if (ann == 9) {
+    display.clearDisplay();
+    display.print("Johnson Avenue");
+    display.display();
+  }
+  else if (ann == 10) {
+    display.clearDisplay();
+    display.print("Boston Avenue at High Street");
+    display.display();
+  }
+  else if (ann == 11) {
+    display.clearDisplay();
+    display.print("Harvard Avenue");
+    display.display();
+  }
+  else if (ann == 12) {
+    display.clearDisplay();
+    display.print("Holton Street");
+    display.display();
+  }
+  else if (ann == 13) {
+    display.clearDisplay();
+    display.print("Arlington Street");
+    display.display();
+  }
+  else if (ann == 14) {
+    display.clearDisplay();
+    display.print("Mystic Valley Parkway");
+    display.display();
+  }
+  else if (ann == 15) {
+    display.clearDisplay();
+    display.print("Stoughton Street");
+    display.display();
+  }
+  else if (ann == 16) {
+    display.clearDisplay();
+    display.print("North Street");
+    display.display();
+  }
+  else if (ann == 17) {
+    display.clearDisplay();
+    display.print("Hillsdale Road");
+    display.display();
+  }
+  else if (ann == 18) {
+    display.clearDisplay();
+    display.print("Chester Avenue");
+    display.display();
+  }
+  else if (ann == 19) {
+    display.clearDisplay();
+    display.print("George Street at Winthrop Street");
+    display.display();
+  }
+  else if (ann == 20) {
+    display.clearDisplay();
+    display.print("Burget Avenue");
+    display.display();
+  }
+  else if (ann == 21) {
+    display.clearDisplay();
+    display.print("Wedgemere Road");
+    display.display();
+  }
+  else if (ann == 22) {
+    display.clearDisplay();
+    display.print("Main Street");
+    display.display();
+  }
+  else if (ann == 23) {
+    display.clearDisplay();
+    display.print("George Street");
+    display.display();
+  }
+  else if (ann == 24) {
+    display.clearDisplay();
+    display.print("Stearns Avenue");
+    display.display();
+  }
+  else if (ann == 25) {
+    display.clearDisplay();
+    display.print("Windsor Road");
+    display.display();
+  }
+  else if (ann == 26) {
+    display.clearDisplay();
+    display.print("Wellesley Street");
+    display.display();
+  }
+  else if (ann == 27) {
+    display.clearDisplay();
+    display.print("Princeton Street");
+    display.display();
+  }
+  else if (ann == 28) {
+    display.clearDisplay();
+    display.print("Harvard Street");
+    display.display();
+  }
+  else if (ann == 29) {
+    display.clearDisplay();
+    display.print("Marion Street");
+    display.display();
+  }
+  else if (ann == 30) {
+    display.clearDisplay();
+    display.print("Medford Street - Tufts Square");
+    display.display();
+  }
+  else if (ann == 31) {
+    display.clearDisplay();
+    display.print("Bow Street");
+    display.display();
+  }
+  else if (ann == 32) {
+    display.clearDisplay();
+    display.print("Dexter Street");
+    display.display();
+  }
+  else if (ann == 33) {
+    display.clearDisplay();
+    display.print("Henry Street");
+    display.display();
+  }
+  delay(275);
+}
 
+void playAnn(const char *text, int txtEnd, int color) {
+  matrix.clear();
+  matrix.print(text);
+  matrix.setTextColor(color);
+  matrix.setCursor(128, 1);
+  matrix.display();
+  for (int x = 128; x >= txtEnd; x--) {
+    matrix.clear();
+    matrix.print(text);
+    matrix.setCursor(x, 1);
+    matrix.display();
+    delay(50);
+  }
 }
