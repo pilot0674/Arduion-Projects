@@ -1,0 +1,15 @@
+int x = analogRead(1);
+
+void setup() {
+
+}
+
+void loop() {
+  if (x < 50) {
+    digitalWrite(1, HIGH);
+  }
+  else {
+    digitalWrite(1, LOW);
+  }
+  tone(2, x, 100);
+}
