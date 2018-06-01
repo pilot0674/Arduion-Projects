@@ -44,52 +44,79 @@ void loop() {
     if (ann > 0) {
       ann--;
       show();
-      delay(400);
+      delay(200);
     }
   }
   if (downButton == HIGH) {
     if (ann < 33) {
       ann++;
       show();
-      delay(400);
+      delay(200);
     }
   }
   if (enter == HIGH) {
     if (ann == 0) {
-      playAnn("Brooks Street - Medford High School", -300, 100);
+      playAnn("Brooks Street - Medford High School", -209, 100);
     }
     if (ann == 1) {
-      playAnn("Exeter Street", -100, 100);
+      playAnn("Exeter Street", -78, 100);
     }
     if (ann == 2) {
-      playAnn("Suffolk Street", -100, 100);
+      playAnn("Suffolk Street", -84, 100);
     }
     if (ann == 3) {
-      playAnn("300 Winthrop Street", -160, 100);
+      playAnn("300 Winthrop Street", -114, 100);
     }
     if (ann == 4) {
-      playAnn("Essex Street", -100, 100);
+      playAnn("Essex Street", -72, 100);
     }
     if (ann == 5) {
-      playAnn("Woburn Street", -100, 100);
+      playAnn("Woburn Street", -78, 100);
     }
     if (ann == 6) {
-      playAnn("Wolcott Street", -100, 100);
+      playAnn("Wolcott Street", -84, 100);
     }
     if (ann == 7) {
-      playAnn("Mystic Street", -100, 100);
+      playAnn("Mystic Street", -78, 100);
     }
     if (ann == 8) {
-      playAnn("Allston Street", -100, 100);
+      playAnn("Allston Street", -84, 100);
     }
     if (ann == 9) {
-      playAnn("Warren Street", -100, 100);
+      playAnn("Warren Street", -78, 100);
     }
     if (ann == 10) {
-      playAnn("Johnson Avenue", -100, 100);
+      playAnn("Johnson Avenue", -84, 100);
     }
     if (ann == 11) {
-      playAnn("Boston Avenue at High Street - Bus connection", -400, 100);
+      playAnn("Boston Avenue at High Street - Bus connection", -260, 100);
+    }
+    if (ann == 12) {
+      playAnn("Harvard Avenue", -84, 100);
+    }
+    if (ann == 13) {
+      playAnn("Holton Street", -78, 100);
+    }
+    if (ann == 14) {
+      playAnn("Arlington Street", -96, 100);
+    }
+    if (ann == 15) {
+      playAnn("Mystic Valley Parkway", -126, 100);
+    }
+    if (ann == 16) {
+      playAnn("Stoughton Street", -96, 100);
+    }
+    if (ann == 17) {
+      playAnn("North Street", -72, 100);
+    }
+    if (ann == 18) {
+      playAnn("Hillsdale Road", -84, 100);
+    }
+    if (ann == 19) {
+      playAnn("Chester Avenue", -84, 100);
+    }
+    if (ann == 20) {
+      playAnn("George Street at Winthrop Street", -192, 100);
     }
   }
   delayMicroseconds(1);
