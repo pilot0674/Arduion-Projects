@@ -23,10 +23,6 @@
 Adafruit_SSD1306 display(OLED_MOSI, OLED_CLK, OLED_DC, OLED_RESET, OLED_CS);
 Adafruit_IS31FL3731 matrix = Adafruit_IS31FL3731();
 
-int downButton = digitalRead(2); //Reads pin 2 to see if the down button is pushed
-int upButton = digitalRead(3); //Reads pin 3 to see if the up button is pushed
-int enter = digitalRead(4); //Reads pin 4 to see if the enter button is being pushed,
-int ann = 0;
 void setup() {
   display.begin(SSD1306_SWITCHCAPVCC);
   display.clearDisplay();
@@ -44,6 +40,10 @@ void setup() {
 }
 
 void loop() {
+  int downButton = digitalRead(2); //Reads pin 2 to see if the down button is pushed
+  int upButton = digitalRead(3); //Reads pin 3 to see if the up button is pushed
+  int enter = digitalRead(4); //Reads pin 4 to see if the enter button is being pushed,
+  int ann = 0;
   if (upButton == HIGH) {
     if (ann > 0) {
       ann = ann - 1;
