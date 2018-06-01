@@ -6,12 +6,6 @@
   This code is meant to be used to display announcments
   on a Matrix for the half day 101 buses going from school
 
-  Items:
-   1 MetroMini
-   2 red jumpers
-   4 yellow jumpers
-   2 orange jumpers
-   2 Pushbuttons
 */
 // These includes the libraries required for this project
 #include <SPI.h>
@@ -40,7 +34,14 @@ void setup() {
   display.setTextWrap(true);
   display.setCursor(0, 0);
   display.setTextSize(1);
+  display.display();
   matrix.begin()
+  matrix.setCursor(0, 1);
+  matrix,setTextSize(1);
+  matrix.setRotation(0);
+  matrix.setTextWrap(false);
+  matrix.clear();
+  matrix.display();
 }
 
 void loop() {
