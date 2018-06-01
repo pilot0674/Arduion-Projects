@@ -43,11 +43,15 @@ void loop() {
   if (upButton == HIGH) {
     if (ann > 0) {
       ann--;
+      show();
+      delay(400);
     }
   }
   if (downButton == HIGH) {
     if (ann < 33) {
       ann++;
+      show();
+      delay(400);
     }
   }
   if (enter == HIGH) {
@@ -88,6 +92,9 @@ void loop() {
       playAnn("Boston Avenue at High Street - Bus connection", -400, 100);
     }
   }
+  delayMicroseconds(1);
+}
+void show() {
   if (ann == 0) {
     display.clearDisplay();
     display.print("Brooks Street - Medford High School");
@@ -258,9 +265,7 @@ void loop() {
     display.print("Henry Street");
     display.display();
   }
-  delay(100);
 }
-
 void playAnn(const char *text, int txtEnd, int color) {
   matrix.clear();
   matrix.setTextColor(color);
