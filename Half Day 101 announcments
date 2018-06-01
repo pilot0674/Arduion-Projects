@@ -24,6 +24,7 @@ Adafruit_SSD1306 display(OLED_MOSI, OLED_CLK, OLED_DC, OLED_RESET, OLED_CS);
 Adafruit_IS31FL3731 matrix = Adafruit_IS31FL3731();
 
 void setup() {
+  Serial.begin(9600);
   display.begin(SSD1306_SWITCHCAPVCC);
   display.clearDisplay();
   display.setTextWrap(true);
@@ -34,7 +35,6 @@ void setup() {
   matrix.clear();
   matrix.setCursor(0, 1);
   matrix.setTextSize(1);
-  matrix.display();
 }
 
 void loop() {
@@ -42,14 +42,15 @@ void loop() {
   int upButton = digitalRead(3); //Reads pin 3 to see if the up button is pushed
   int enter = digitalRead(4); //Reads pin 4 to see if the enter button is being pushed,
   int ann = 0;
+  Serial.println(ann);
   if (upButton == HIGH) {
     if (ann > 0) {
-      ann = ann - 1;
+      ann--;
     }
   }
   if (downButton == HIGH) {
     if (ann < 33) {
-      ann = ann + 1;
+      ann++;
     }
   }
   if (enter == HIGH) {
@@ -234,13 +235,12 @@ void playAnn(const char *text, int txtEnd, int color) {
   matrix.clear();
   matrix.print(text);
   matrix.setTextColor(color);
+  matrix.setTextWrap(false);
   matrix.setCursor(128, 1);
-  matrix.display();
   for (int x = 128; x >= txtEnd; x--) {
     matrix.clear();
     matrix.print(text);
     matrix.setCursor(x, 1);
-    matrix.display();
     delay(50);
   }
 }
