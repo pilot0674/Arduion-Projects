@@ -39,7 +39,7 @@ void setup() {
 void loop() {
   int downButton = digitalRead(2); //Reads pin 2 to see if the down button is pushed
   int upButton = digitalRead(3); //Reads pin 3 to see if the up button is pushed
-  int enter = digitalRead(4); //Reads pin 4 to see if the enter button is being pushed,
+  int enter = digitalRead(4); //Reads pin 4 to see if the enter button is being pushed
   if (upButton == HIGH) {
     if (ann > 0) {
       ann--;
@@ -52,37 +52,40 @@ void loop() {
   }
   if (enter == HIGH) {
     if (ann == 0) {
-      playAnn("Brooks Street - Medford High School", -500, 100);
+      playAnn("Brooks Street - Medford High School", -300, 100);
     }
     if (ann == 1) {
-      playAnn("Exeter Street", -160, 100);
+      playAnn("Exeter Street", -100, 100);
     }
     if (ann == 2) {
-      playAnn("Suffolk Street", -160, 100);
+      playAnn("Suffolk Street", -100, 100);
     }
     if (ann == 3) {
-      playAnn("300 Winthrop Street", -200, 100);
+      playAnn("300 Winthrop Street", -160, 100);
     }
     if (ann == 4) {
-      playAnn("Essex Street", -160, 100);
+      playAnn("Essex Street", -100, 100);
     }
     if (ann == 5) {
-      playAnn("Woburn Street", -160, 100);
+      playAnn("Woburn Street", -100, 100);
     }
     if (ann == 6) {
-      playAnn("Wolcott Street", -160, 100);
+      playAnn("Wolcott Street", -100, 100);
     }
     if (ann == 7) {
-      playAnn("Mystic Street", -160, 100);
+      playAnn("Mystic Street", -100, 100);
     }
     if (ann == 8) {
-      playAnn("Allston Street", -160, 100);
+      playAnn("Allston Street", -100, 100);
     }
     if (ann == 9) {
-      playAnn("Warren Street", -160, 100);
+      playAnn("Warren Street", -100, 100);
     }
     if (ann == 10) {
-      playAnn("Johnson Avenue", -160, 100);
+      playAnn("Johnson Avenue", -100, 100);
+    }
+    if (ann == 11) {
+      playAnn("Boston Avenue at High Street - Bus connection", -400, 100);
     }
   }
   if (ann == 0) {
@@ -255,7 +258,7 @@ void loop() {
     display.print("Henry Street");
     display.display();
   }
-  delay(70);
+  delay(100);
 }
 
 void playAnn(const char *text, int txtEnd, int color) {
