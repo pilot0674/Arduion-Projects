@@ -28,7 +28,6 @@ int upButton = digitalRead(3); //Reads pin 3 to see if the up button is pushed
 int enter = digitalRead(4); //Reads pin 4 to see if the enter button is being pushed,
 int ann = 0;
 void setup() {
-  Serial.begin(9600);
   display.begin(SSD1306_SWITCHCAPVCC);
   display.clearDisplay();
   display.setTextWrap(true);
