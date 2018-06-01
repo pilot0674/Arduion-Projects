@@ -56,7 +56,7 @@ void loop() {
   }
   if (enter == HIGH) {
     if (ann == 0) {
-      playAnn("Brooks Street - Medford High School", 500, 100);
+      playAnn("Brooks Street - Medford High School", -500, 100);
     }
   }
   if (ann == 0) {
