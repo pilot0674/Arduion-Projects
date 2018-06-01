@@ -1,11 +1,11 @@
-int x = analogRead(1);
-
 void setup() {
-
+  pinMode(1, OUTPUT);
+  digitalWrite(1, LOW);
 }
 
 void loop() {
-  if (x < 50) {
+  int x = analogRead(1);
+  if (x < 100) {
     digitalWrite(1, HIGH);
   }
   else {
