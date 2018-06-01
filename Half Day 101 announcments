@@ -22,7 +22,7 @@
 //This compacts all the data into an intiger which is used in the functions to operate the OLED and Matrix
 Adafruit_SSD1306 display(OLED_MOSI, OLED_CLK, OLED_DC, OLED_RESET, OLED_CS);
 Adafruit_IS31FL3731 matrix = Adafruit_IS31FL3731();
-
+int ann = 0;
 void setup() {
   display.begin(SSD1306_SWITCHCAPVCC);
   display.clearDisplay();
@@ -40,7 +40,6 @@ void loop() {
   int downButton = digitalRead(2); //Reads pin 2 to see if the down button is pushed
   int upButton = digitalRead(3); //Reads pin 3 to see if the up button is pushed
   int enter = digitalRead(4); //Reads pin 4 to see if the enter button is being pushed,
-  int ann = 0;
   if (upButton == HIGH) {
     if (ann > 0) {
       ann--;
@@ -54,6 +53,36 @@ void loop() {
   if (enter == HIGH) {
     if (ann == 0) {
       playAnn("Brooks Street - Medford High School", -500, 100);
+    }
+    if (ann == 1) {
+      playAnn("Exeter Street", -160, 100);
+    }
+    if (ann == 2) {
+      playAnn("Suffolk Street", -160, 100);
+    }
+    if (ann == 3) {
+      playAnn("300 Winthrop Street", -200, 100);
+    }
+    if (ann == 4) {
+      playAnn("Essex Street", -160, 100);
+    }
+    if (ann == 5) {
+      playAnn("Woburn Street", -160, 100);
+    }
+    if (ann == 6) {
+      playAnn("Wolcott Street", -160, 100);
+    }
+    if (ann == 7) {
+      playAnn("Mystic Street", -160, 100);
+    }
+    if (ann == 8) {
+      playAnn("Allston Street", -160, 100);
+    }
+    if (ann == 9) {
+      playAnn("Warren Street", -160, 100);
+    }
+    if (ann == 10) {
+      playAnn("Johnson Avenue", -160, 100);
     }
   }
   if (ann == 0) {
@@ -226,16 +255,16 @@ void loop() {
     display.print("Henry Street");
     display.display();
   }
-  delay(275);
+  delay(70);
 }
 
 void playAnn(const char *text, int txtEnd, int color) {
   matrix.clear();
-  matrix.print(text);
   matrix.setTextColor(color);
   matrix.setTextWrap(false);
-  matrix.setCursor(128, 1);
-  for (int x = 128; x >= txtEnd; x--) {
+  matrix.setCursor(16, 1);
+  matrix.print(text);
+  for (int x = 16; x >= txtEnd; x--) {
     matrix.clear();
     matrix.print(text);
     matrix.setCursor(x, 1);
