@@ -47,7 +47,7 @@ void loop() {
     }
   }
   if (downButton == HIGH) {
-    if (ann < 33) {
+    if (ann < 34) {
       ann++;
       show();
       delay(200);
@@ -149,6 +149,15 @@ void loop() {
     }
     if (ann == 31) {
       playAnn("Medford Street - Tufts Square", -174, 100);
+    }
+    if (ann == 32) {
+      playAnn("Bow Street", -60, 100);
+    }
+    if (ann == 33) {
+      playAnn("Dexter Street", -78, 100);
+    }
+    if (ann == 34) {
+      playAnn("Henry Street", -72, 100);
     }
   }
   delayMicroseconds(1);
