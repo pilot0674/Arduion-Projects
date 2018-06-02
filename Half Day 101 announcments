@@ -94,14 +94,14 @@ void loop() {
     if (ann > 0) {
       ann--;
       show();
-      delay(200);
+      delay(300);
     }
   }
   if (downButton == HIGH) {
     if (ann < 34) {
       ann++;
       show();
-      delay(200);
+      delay(300);
     }
   }
   if (enter == HIGH) {
