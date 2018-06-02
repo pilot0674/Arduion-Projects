@@ -14,12 +14,11 @@
 #include <Adafruit_IS31FL3731.h>
 #include <Adafruit_SSD1306.h>
 //This identifies all the pins that the OLED will use
-#define OLED_MOSI   9 //Tells the OLED intiger that Data is connected to Digital pin 9
-#define OLED_CLK   10 //Tells the OLED intiger that Clk is connected to Digital pin 10
-#define OLED_DC    11 //Tells the OLED intiger that DC is connected to Digital pin 11
-#define OLED_CS    12 //Tells the OLED intiger that CS is connected to Digital pin 12
-#define OLED_RESET 13 //Tells the OLED intiger that Rst(Reset) is connected to Digital pin 13
-//This compacts all the data into an intiger which is used in the functions to operate the OLED and Matrix
+#define OLED_MOSI   9
+#define OLED_CLK   10
+#define OLED_DC    11
+#define OLED_CS    12
+#define OLED_RESET 13
 Adafruit_SSD1306 display(OLED_MOSI, OLED_CLK, OLED_DC, OLED_RESET, OLED_CS);
 Adafruit_IS31FL3731 matrix = Adafruit_IS31FL3731();
 int ann = 0;
@@ -117,6 +116,39 @@ void loop() {
     }
     if (ann == 20) {
       playAnn("George Street at Winthrop Street", -192, 100);
+    }
+    if (ann == 21) {
+      playAnn("Burget Avenue", -80, 100);
+    }
+    if (ann == 22) {
+      playAnn("Wedgemere Road", -84, 100);
+    }
+    if (ann == 23) {
+      playAnn("Main Street", -66, 100);
+    }
+    if (ann == 24) {
+      playAnn("George Street - Bus connection", -180, 100);
+    }
+    if (ann == 25) {
+      playAnn("Staerns Avenue", -84, 100);
+    }
+    if (ann == 26) {
+      playAnn("Windsor Road", -72, 100);
+    }
+    if (ann == 27) {
+      playAnn("Wellesley Street", -96, 100);
+    }
+    if (ann == 28) {
+      playAnn("Princeton Street", -96, 100);
+    }
+    if (ann == 29) {
+      playAnn("Harvard Street", -84, 100);
+    }
+    if (ann == 30) {
+      playAnn("Marion Street", -78, 100);
+    }
+    if (ann == 31) {
+      playAnn("Medford Street - Tufts Square", -174, 100);
     }
   }
   delayMicroseconds(1);
