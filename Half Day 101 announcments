@@ -84,6 +84,7 @@ void setup() {
   display.clearDisplay();
   display.display();
   matrix.clear();
+  show();
 }
 
 void loop() {
