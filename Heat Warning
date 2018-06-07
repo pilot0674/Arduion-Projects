@@ -9,7 +9,10 @@
 #define OLED_CS    12
 #define OLED_RESET 13
 Adafruit_SSD1306 display(OLED_MOSI, OLED_CLK, OLED_DC, OLED_RESET, OLED_CS);
-
+int gaveHeatWarning = false;
+int gaveExtremeHeatWarning = false;
+int gaveColdWarning = false;
+int gaveExtremeColdWarning = false;
 void setup() {
   display.begin(SSD1306_SWITCHCAPVCC);
   display.clearDisplay();
@@ -18,13 +21,34 @@ void setup() {
 }
 
 void loop() {
-  display.clearDisplay();
-  display.print("Current Temp: ");
-  display.print(f);
-  display.println("*F");
-  display.display();
+  
 }
 
-void warn(int type, int temp) {
+void warn(int type) {
+if (type == HEAT) {
+gaveHeatWarning = true;
+display.drawRectangle(0, 0, 128, 64);
+display.drawLine(0, 15, 128, 15);
+for (int x = 0; x <= 1000; x += 5) {
+tone(1, x, 10);
+}
+for (int x = 0; x <= 1000; x += 5) {
+tone(1, x, 10);
+}
+for (int x = 0; x <= 1000; x += 5) {
+tone(1, x, 10);
+}
+delay(3000);
+display.clearDisplay();
+display.display();
+}
+}
 
+void showTemp(int temp) {
+display.clearDisplay();
+display.setTeztSize(1);
+display.setCursor(0, 0):
+display.println("CURRENT TEMP:");
+display print(f); display.print("*F");
+display.display();
 }
