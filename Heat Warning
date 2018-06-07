@@ -35,9 +35,18 @@ void loop() {
       warn("HEAT");
     }
   }
-  else {
-    showTemp(f);
+  else if (f <= cold) {
+    if (gaveColdWarning == false) {
+      warn("COLD");
+    }
   }
+  else {
+    gaveHeatWarning = false;
+    gaveExtremeHeatWarning = false;
+    gaveColdWarning = false;
+    gaveExtremeColdWarning = false;
+  }
+  showTemp(f);
 }
 
 void warn(int type) {
@@ -48,7 +57,7 @@ void warn(int type) {
     display.drawLine(0, 8, 128, 8, WHITE);
     display.setCursor(30, 1);
     display.print("HEAT WARNING");
-    display.setCursor(1, 10);
+    display.setCursor(2, 10);
     display.print("PLEASE ENABLE FAN TO COOL DOWN SYSTEMS");
     display.display();
     for (int x = 0; x <= 1000; x++) {
@@ -60,6 +69,25 @@ void warn(int type) {
     for (int x = 0; x <= 1000; x++) {
       tone(1, x, 3);
     }
+    delay(3000);
+    display.clearDisplay();
+    display.display();
+  }
+  else if (type == "COLD") {
+    gaveColdWarning = true;
+    display.clearDisplay();
+    display.drawRect(0, 0, 128, 32, WHITE);
+    display.drawLine(0, 8, 128, 8, WHITE);
+    display.setCursor(30, 1);
+    display.print("COLD WARNING");
+    display.setCursor(2, 10);
+    display.print("PLEASE PLACE THIS DEVICE IN A WARM ENVIORMENT TO AVOID DAMAGE");
+    display.display();
+    tone(1, 909, 300);
+    delay(310);
+    tone(1, 909, 300);
+    delay(310);
+    tone(1, 909, 300);
     delay(3000);
     display.clearDisplay();
     display.display();
