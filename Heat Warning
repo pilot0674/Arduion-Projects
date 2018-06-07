@@ -21,10 +21,9 @@ void setup() {
   display.clearDisplay();
   display.setTextColor(WHITE);
   display.display();
-  if (!tempsensor.begin()) {
-    Serial.println("Couldn't find MCP9808!");
-    while (1);
-  }
+  #if (!tempsensor.begin()) {
+  #error("Couldn't find MCP9808! Please hook up your MCP9808 to the breadboard!");
+  #endif
 }
 
 void loop() {
