@@ -27,8 +27,8 @@ void loop() {
 void warn(int type) {
 if (type == HEAT) {
 gaveHeatWarning = true;
-display.drawRectangle(0, 0, 128, 64);
-display.drawLine(0, 15, 128, 15);
+display.drawRect(0, 0, 128, 64, 255);
+display.drawLine(0, 15, 128, 15, 255);
 for (int x = 0; x <= 1000; x += 5) {
 tone(1, x, 10);
 }
