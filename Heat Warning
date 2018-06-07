@@ -40,6 +40,9 @@ void loop() {
       warn("COLD");
     }
   }
+  else if (f >= 125) {
+    
+  }
   else {
     gaveHeatWarning = false;
     gaveExtremeHeatWarning = false;
@@ -88,6 +91,48 @@ void warn(int type) {
     tone(1, 909, 300);
     delay(310);
     tone(1, 909, 300);
+    delay(3000);
+    display.clearDisplay();
+    display.display();
+  }
+  else if (type == "EXTREME COLD") {
+    gaveColdWarning = true;
+    display.clearDisplay();
+    display.drawRect(0, 0, 128, 32, WHITE);
+    display.drawLine(0, 8, 128, 8, WHITE);
+    display.setCursor(10, 1);
+    display.print("EXTREME COLD WARNING");
+    display.setCursor(2, 10);
+    display.print("FOR YOUR SAFETY AND THE SYSTEMS SAFETY, GET TO A WARM ENVIORMENT");
+    display.display();
+    tone(1, 2000, 500);
+    delay(500);
+    tone(1, 500, 500);
+    delay(500);
+    tone(1, 2000, 500);
+    delay(500);
+    tone(1, 500, 500);
+    delay(3000);
+    display.clearDisplay();
+    display.display();
+  }
+  else if (type == "EXTREME HEAT") {
+    gaveColdWarning = true;
+    display.clearDisplay();
+    display.drawRect(0, 0, 128, 32, WHITE);
+    display.drawLine(0, 8, 128, 8, WHITE);
+    display.setCursor(10, 1);
+    display.print("EXTREME HEAT WARNING");
+    display.setCursor(2, 10);
+    display.print("TO AVOID PERMINENT DAGAME, PLEASE ENABLE FAN. HEAT HAS REACHED DANGEROUSE LEVELS");
+    display.display();
+    tone(1, 2000, 500);
+    delay(500);
+    tone(1, 500, 500);
+    delay(500);
+    tone(1, 2000, 500);
+    delay(500);
+    tone(1, 500, 500);
     delay(3000);
     display.clearDisplay();
     display.display();
