@@ -13,6 +13,8 @@ int gaveHeatWarning = false;
 int gaveExtremeHeatWarning = false;
 int gaveColdWarning = false;
 int gaveExtremeColdWarning = false;
+int heat = 100; //change this to the temperature at which it will administrator a regular heat warning
+int cold = 32; //change this to the temperature at which it will administrator a regular cold warning
 void setup() {
   display.begin(SSD1306_SWITCHCAPVCC);
   display.clearDisplay();
@@ -21,7 +23,7 @@ void setup() {
 }
 
 void loop() {
-  
+  if (f => 
 }
 
 void warn(int type) {
