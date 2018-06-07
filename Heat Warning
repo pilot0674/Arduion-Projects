@@ -41,7 +41,14 @@ void loop() {
     }
   }
   else if (f >= 125) {
-    
+    if (gaveExtremeHeatWarning == false) {
+      warn("EXTREME HEAT");
+    }
+  }
+  else if (f <= 0) {
+    if (gaveExtremeColdWarning == false) {
+      warn("EXTREME COLD");
+    }
   }
   else {
     gaveHeatWarning = false;
