@@ -32,8 +32,11 @@ void setup()   {
 }
 
 void loop() {
+  int z = analogRead(1);
   char key = keypad.getKey();
-  
+  if (mode == "CONTROL") {
+    analogWrite(6, x/255)
+  }
 }
 void inputCode(int x) {
   scroll[0] = scroll[1];
