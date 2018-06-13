@@ -41,7 +41,10 @@ void inputCode(int x) {
   scroll[2] = scroll[3];
   scroll[3] = x;
   display.clearDisplay();
-  display.setCursor(0, 0);
+  display.setCUrsor(5, 0);
+  display.setTextSize(1);
+  display.print("ENTER CODE");
+  display.setCursor(0, 8);
   display.setTextWrap(true);
   display.setTextSize(2);
   display.print(scroll[0]);
