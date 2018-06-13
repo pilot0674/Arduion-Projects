@@ -1,1 +1,34 @@
+#include <SPI.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+#include <Keypad.h>
+#define OLED_MOSI   9
+#define OLED_CLK   10
+#define OLED_DC    11
+#define OLED_CS    12
+#define OLED_RESET 13
+Adafruit_SSD1306 display(OLED_MOSI, OLED_CLK, OLED_DC, OLED_RESET, OLED_CS);
+const byte ROWS = 4;
+const byte COLS = 4;
+char keys[ROWS][COLS] = {
+  {'1', '2', '3', 'A'},
+  {'4', '5', '6', 'B'},
+  {'7', '8', '9', 'C'},
+  {'0', 'F', 'E', 'D'}
+};
+byte rowPins[ROWS] = {4, 3, 2, 1};
+byte colPins[COLS] = {8, 7, 6, 5};
+Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
 
+void setup()   {
+  display.clearDisplay();
+  display.display();
+  display.begin(SSD1306_SWITCHCAPVCC);
+  display.setTextColor(WHITE);
+}
+
+void loop() {
+  char key = keypad.getKey();
+  
+}
