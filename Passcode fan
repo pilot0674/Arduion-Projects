@@ -20,7 +20,10 @@ char keys[ROWS][COLS] = {
 byte rowPins[ROWS] = {4, 3, 2, 1};
 byte colPins[COLS] = {8, 7, 6, 5};
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
-
+int mode = "LOCKED";
+char code[4] = {0, 6, 7, 4};
+char input[4] = {' ', ' ', ' ', ' '};
+char scroll[4] = {' ', ' ', ' ', ' '};
 void setup()   {
   display.clearDisplay();
   display.display();
@@ -31,4 +34,20 @@ void setup()   {
 void loop() {
   char key = keypad.getKey();
   
+}
+void inputCode(int x) {
+  scroll[0] = scroll[1];
+  scroll[1] = scroll[2];
+  scroll[2] = scroll[3];
+  scroll[3] = x;
+  display.clearDisplay();
+  display.setCursor(0, 0);
+  display.setTextWrap(true);
+  display.setTextSize(2);
+  display.print(scroll[0]);
+  display.print(scroll[1]);
+  display.print(scroll[2]);
+  display.print(scroll[3]);
+  display.display();
+  tone(1, 600, 100);
 }
