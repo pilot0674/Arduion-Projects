@@ -35,7 +35,7 @@ void loop() {
   int z = analogRead(1);
   char key = keypad.getKey();
   if (mode == "CONTROL") {
-    analogWrite(6, x/255)
+    analogWrite(6, 0.24926686217*x);
   }
 }
 void inputCode(int x) {
