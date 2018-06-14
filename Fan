@@ -1,0 +1,18 @@
+/*
+   *************************
+   *    THE COOLING FAN    *
+   *******by pilot674*******
+   
+   Overview:
+   You will never be too hot again! Now
+   you can have a working DC fan in the
+   palm of your hand! Make sure to follow
+   the steps carefully!
+   
+   Items:
+   1 polulu Motor Driver
+   1 DC 5V Fan
+   1 Breadboard
+   1 MetroMini
+   1 Potentiomiter
+   1 
