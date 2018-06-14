@@ -21,7 +21,17 @@ void setup() {
   delay(1000);
   display.clearDisplay();
   display.display();
-  delay
+  delay(1000);
+  showText("Hi my lovely", 1, true, 0, 0);
+  delay(3000);
+  showText("I have afew things to say", 1, true, 0, 0);
+  delay(3000);
+  showText("Ik wat ur thinking... Why dont you just say it outlounud?", 1, true, 0, 0);
+  delay(5000);
+  showText("well... its cuz i wanted to do something special for you", 1, true, 0, 0);
+  delay(4000);
+  showText("I wanted to say thx sooo much for beging with me again", 1, true, 0, 0);
+  delay(
 }
 
 void showText(const char *text, int txtsize, int txtwrap, int cx, int cy) {
