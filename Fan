@@ -14,5 +14,32 @@
    1 DC 5V Fan
    1 Breadboard
    1 MetroMini
-   1 Potentiomiter
-   1 
+   1 Potentiometer
+   4 Yellow ground Jumpers
+   1 Orange ground jumper
+   2 Red Ground Jumpers
+   3 Jumpers
+   1 Bench Supply
+   1 Alagator Jumper (Red)
+   1 Alagator Jumper (Black)
+   Assembly:
+   Using the Red ground jumpers, connect Power
+   on one side of your board to power on the other
+   side, and do the same with Ground.
+   Place the MetroMini onto your Breadboard.
+   Using 2 Yellow ground jumpers, connect 5V pin on your MetroMini
+   to Power on your Breadboard and connect GND pin on your MetroMini
+   to Ground on your Breadboard.
+   Place the Potentiometer onto your Breadboard. Using 1 Yellow
+   ground Jumper and 1 Orange ground jumper, connect a pin on each
+   side to power and the other one to ground.
+   Using a regular jumper, connect the Middle pin on your Potentiometer
+   to Analog Pin 1 on your MetroMini (A1).
+   Place the Motor Driver onto your Breadboard. Using a Yellow ground jumper,
+   connect GND on the Left Side of your Motor Driver to Ground on your Breadboard.
+   Using your Last yellow ground jumper, connect B1 IN to Ground on your Breadboard.
+   Using a regular jumper, connect B2 IN to Digital pin 6 on your MetroMini.
+   Place a jumper connected
+   
+
+
