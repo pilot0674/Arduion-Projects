@@ -52,6 +52,23 @@
    Your ready to use it!
    
    Control the speed of the fan with the Potentiometer.
+   
+   WARNINGS
+   DO NOT try to control the fan
+   directly from ANY pin on your MetroMini. That will draw too
+   much currect which will cause your MetroMini to short out
+   and cause perminent damage
+   
+   DO NOT turn up your Bench Supply power over 12.0V, this will damage your
+   cooling fan and make it overheat
+   
+   Before plugging in your MetroMini, make sure that all the pins
+   are hooked up correctly. If not, this may cause damage to
+   your motor driver, fan and/or MetroMini.
+   
+   DO NOT plug in power and ground from your Bench Supply directly to Power and Ground
+   on your Breadboard. This will short out your MotroMini and cause perminent
+   damage.
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    pilot0674 June 14th, 2018 10:30 AM EDT
 */
