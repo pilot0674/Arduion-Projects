@@ -1,0 +1,64 @@
+#include <SPI.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_IS31FL3731.h>
+#include <Adafruit_SSD1306.h>
+//This identifies all the pins that the OLED will use
+#define OLED_MOSI   9
+#define OLED_CLK   10
+#define OLED_DC    11
+#define OLED_CS    12
+#define OLED_RESET 13
+Adafruit_SSD1306 display(OLED_MOSI, OLED_CLK, OLED_DC, OLED_RESET, OLED_CS);
+Adafruit_IS31FL3731 matrix = Adafruit_IS31FL3731();
+int scroll = 0;
+int isstart = 0;
+int page = 0;
+void setup() {
+  display.begin(SSD1306_SWITCHCAPVCC);
+  display.clearDisplay();
+  display.setTextWrap(true);
+  display.setCursor(0, 0);
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+  display.println("TRANSIT MASTER");
+  delay(3000);
+  matrix.begin();
+  matrix.clear();
+  matrix.setCursor(0, 1);
+  matrix.setTextSize(1);
+  matrix.fillRect(0, 0, 16, 9, 20);
+  display.clearDisplay();
+  display.setCursor(0, 0);
+  display.print("Is every pixel on your matrix lit up?");
+  display.display();
+  delay(5000);
+  display.clearDisplay();
+  display.setCursor(0, 0);
+  display.print("IF none are lit up, you may have wired up your matrix incorrectly");
+  display.display();
+  delay(5000);
+  display.clearDisplay();
+  display.setCursor(0, 0);
+  display.print("If most are lit up but not all, the ones that didnt light up may have burnt out");
+  display.display();
+  delay(5000);
+  display.clearDisplay();
+  display.display();
+  matrix.clear();
+  show();
+  isstart = 1;
+
+
+}
+
+void loop() {
+  if (isstart == 1) {
+    int select = digitalRead(1);
+    int up = digitalRead(2);
+    int down = digitalRead(3);
+    if (page == 0) {
+
+    }
+  }
+}
