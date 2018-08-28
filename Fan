@@ -70,7 +70,7 @@
    on your Breadboard. This will short out your MotroMini and cause perminent
    damage.
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   pilot0674 June 14th, 2018 10:30 AM EDT
+   pilot0674 August 28th, 2018 11:34 AM EST
 */
 
 void setup() {
