@@ -28,6 +28,9 @@
    a battey back. Just hook up power and gound the same as a bench power supply,
    however the battery backs do not require an Alagator jumper. Just plug it in 
    accordingly. Prefferably a battery pack that holds 4 batterys of more.
+   Using AA batteries, each battery outputs 1.5V. Multiplying the output
+   of your batteries by the amount of batteries you have plugged in will
+   give you your Battery back output.
    
    Assembly:
    Using the Red ground jumpers, connect Power
