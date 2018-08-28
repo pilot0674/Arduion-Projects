@@ -36,7 +36,7 @@
    Using a regular jumper, connect the Middle pin on your Potentiometer
    to Analog Pin 1 on your MetroMini (A1).
    Place the Motor Driver onto your Breadboard. Using a Yellow ground jumper,
-   connect GND on the Left Side of your Motor Driver to Ground on your Breadboard.
+   connect GND on the Right Side of your Motor Driver to Ground on your Breadboard.
    Using your Last yellow ground jumper, connect B1 IN to Ground on your Breadboard.
    Using a regular jumper, connect B2 IN to Digital pin 6 on your MetroMini.
    Place a jumper connected to in GND pin on the Motor Driver on the Left side. On 
@@ -82,5 +82,4 @@ void loop() {
   
 }
    
-
 
