@@ -1,0 +1,16 @@
+void setup() {
+}
+
+void loop() {
+  int x = analogRead(1); 
+  if (digitalRead(2) == LOW) {
+    digitalWrite(5, LOW);
+    analogWrite(6, 0.24926686217*x);
+  }
+  else {
+    digitalWrite(6, LOW);
+    analogWrite(5, 0.24926686217*x);
+  }  
+}
+   
+
