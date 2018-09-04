@@ -1,28 +1,6 @@
-/*
-  SparkFun Inventor's Kit
-  Example sketch 17
 
-  LIQUID CRYSTAL DISPLAY (LCD)
-
-  This sketch will show you how to connect an LCD to your Arduino
-  and display any data you wish.
-
-  This sketch was written by SparkFun Electronics,
-  with lots of help from the Arduino community.
-  This code is completely free for any use.
-  Visit https://www.sparkfun.com/products/12060 for SIK information.
-  Visit http://www.arduino.cc to learn more about Arduino.
-*/
-
-// Load the LiquidCrystal library, which will give us
-// commands to interface to the LCD:
 
 #include <LiquidCrystal.h>
-
-// Initialize the library with the pins we're using.
-// (Note that you can use different pins if needed.)
-// See http://arduino.cc/en/Reference/LiquidCrystal
-// for more information:
 
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
@@ -36,31 +14,79 @@ void setup()
 
 void loop()
 {
-  lcd.setCursor(0,0);
-  lcd.print("NEXT STATION");
-  scroll1(-5, "TEST1");
+  scroll1(-7, "ASHMONT                ");
+  delay(1000);
+  scroll2(-7, "ASHMONT                ");
+  delay(500);
+  transferTo(-130, "RED LINE, BUSES 15, 18, 21, 22, 23, 24/27, 26, 27, 45, 217 *WEEKDAY ONLY*, 215, 240 AND THE BROCTON AREA TRANSIT AUTHORITY BUS 12                ");
+  delay(20000);
+  scroll1(-11, "CEDAR GROVE                ");
+  delay(1000);
+  scroll2(-11, "CEDAR GROVE                ");
+  delay(20000);
+  scroll1(-6, "BUTLER                ");
+  delay(1000);
+  scroll2(-6, "BUTLER               ");
+  delay(20000);
+  scroll1(-20, "MILTON - LOWER MILLS                ");
+  delay(1000);
+  scroll2(-20, "MILTON - LOWER MILLS                ");
+  delay(500);
+  transferTo(-22, "BUS 217 *WEEKDAY ONLY*                ");
+  delay(20000);
+  scroll1(-14, "CENTRAL AVENUE                ");
+  delay(1000);
+  scroll2(-14, "CENTRAL AVENUE                ");
+  delay(500);
+  transferTo(-51, "BUS 240 AND THE BROCTON AREA TRANSIT AUTHORITY BUS 12                ");
+  delay(20000);
+  scroll1(-11, "VALLEY ROAD                ");
+  delay(1000);
+  scroll2(-11, "VALLEY ROAD                ");
+  delay(20000);
+  scroll1(-12, "CAPEN STREET                ");
+  delay(1000);
+  scroll2(-12, "CAPEN STREET                ");
+  delay(20000);
+  scroll1(-14, "MATTAPAN                ");
+  delay(1000);
+  scroll2(-14, "MATTAPAN                ");
+  delay(500);
+  transferTo(-71, "BUSES 15, 24, 24/27, 27, 28, 29, 30, 31, 33, 245 *WEEKDAY ONLY* AND 716                ");
 }
 
 void scroll1(int x, const char* y) {
-  lcd.print(y);
   for (int z = 16; z >= x; z--) {
     lcd.clear();
-    lcd.setCursor(z,3);
+    lcd.setCursor(z,1);
     lcd.print(y);
     lcd.setCursor(0,0);
-    lcd.print("NEXT STATION");
+    lcd.print("NEXT STATION     ");
     delay(274);
   }
+  lcd.clear();
 }
 
 void scroll2(int x, const char* y) {
-  lcd.print(y);
   for (int z = 16; z >= x; z--) {
     lcd.clear();
-    lcd.setCursor(z,3);
+    lcd.setCursor(z,1);
     lcd.print(y);
     lcd.setCursor(0,0);
-    lcd.print("NOW APPROACHING");
+    lcd.print("NOW APPROACHING ");
     delay(274);
   }
+  lcd.clear();
+}
+
+void transferTo(int x, const char* y) {
+  for (int z = 16; z >= x; z--) {
+    lcd.clear();
+    lcd.setCursor(z,1);
+    lcd.print(y);
+    lcd.setCursor(0,0);
+    lcd.print("TRANSFER TO     ");
+    delay(274);
+  }
+  lcd.clear();
 }
