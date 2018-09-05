@@ -38,7 +38,7 @@ void loop()
   delay(1000);
   scroll2(-14, "CENTRAL AVENUE                ");
   delay(500);
-  transferTo(-51, "BUS 240 AND THE BROCTON AREA TRANSIT AUTHORITY BUS 12                ");
+  transferTo(-54, "BUS 240 AND THE BROCKTON AREA TRANSIT AUTHORITY BUS 12                ");
   delay(20000);
   scroll1(-11, "VALLEY ROAD                ");
   delay(1000);
