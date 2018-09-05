@@ -18,7 +18,7 @@ void loop()
   delay(1000);
   scroll2(-7, "ASHMONT                ");
   delay(500);
-  transferTo(-130, "RED LINE, BUSES 15, 18, 21, 22, 23, 24/27, 26, 27, 45, 217 *WEEKDAY ONLY*, 215, 240 AND THE BROCTON AREA TRANSIT AUTHORITY BUS 12                ");
+  transferTo(-72, "RED LINE, BUSES 15 18 21 22 23 24/27 26 27 45 215 217 240 AND BAT BUS 12        ");
   delay(20000);
   scroll1(-11, "CEDAR GROVE                ");
   delay(1000);
@@ -48,11 +48,11 @@ void loop()
   delay(1000);
   scroll2(-12, "CAPEN STREET                ");
   delay(20000);
-  scroll1(-14, "MATTAPAN                ");
+  scroll1(-8, "MATTAPAN                ");
   delay(1000);
-  scroll2(-14, "MATTAPAN                ");
+  scroll2(-8, "MATTAPAN                ");
   delay(500);
-  transferTo(-71, "BUSES 15, 24, 24/27, 27, 28, 29, 30, 31, 33, 245 *WEEKDAY ONLY* AND 716                ");
+  transferTo(-62, "BUSES 15 24 24/27 27 28 29 30 31 33 245 *WEEKDAY ONLY* AND 716                ");
 }
 
 void scroll1(int x, const char* y) {
