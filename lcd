@@ -1,80 +1,79 @@
 
-
+//If you need to test an announcment, delte the other function triggers exept for the one you need to test. Then press Ctrl + Z untill they return the functions back.
 #include <LiquidCrystal.h>
+int test = 0;
+#define SCROLL_DELAY 274
 
+char stops[8][50] = {
+  "ASHMONT                ",
+  "CEDAR GROVE                ",
+  "BUTLER                ",
+  "MILTON - LOWER MILLS                ",
+  "CENTRAL AVENUE                ",
+  "VALLEY ROAD                ",
+  "CAPEN STREET                ",
+  "MATTAPAN                "
+};
+
+char transferto[8][80] = {
+  "RED LINE, BUSES 15 18 21 22 23 24/27 26 27 215 217 240 AND BAT BUS 12",
+  "",
+  "",
+  "BUS 217 *WEEKDAY ONLY*",
+  "BUS 240 AND THE BROCKTON AREA TRANSIT AUTHORITY BUS 12",
+  "",
+  "",
+  "BUSES 15 24 24/27 27 28 29 30 31 33 245 *WEEKDAY ONLY* AND 716"
+};
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
-void setup()
-{
-
-
+void setup() {
+  Serial.begin(9600);
   lcd.begin(16, 2);
   lcd.clear();
 }
 
 void loop()
 {
-  scroll1(-7, "ASHMONT                ");
+  String m = stops[test];
+  String t = transferto[test];
+  scroll1(-m.length()+16, stops[test]);
   delay(1000);
-  scroll2(-7, "ASHMONT                ");
+  scroll2(-m.length()+16, stops[test]);
   delay(500);
-  transferTo(-72, "RED LINE, BUSES 15 18 21 22 23 24/27 26 27 45 215 217 240 AND BAT BUS 12        ");
-  delay(20000);
-  scroll1(-11, "CEDAR GROVE                ");
-  delay(1000);
-  scroll2(-11, "CEDAR GROVE                ");
-  delay(20000);
-  scroll1(-6, "BUTLER                ");
-  delay(1000);
-  scroll2(-6, "BUTLER               ");
-  delay(20000);
-  scroll1(-20, "MILTON - LOWER MILLS                ");
-  delay(1000);
-  scroll2(-20, "MILTON - LOWER MILLS                ");
-  delay(500);
-  transferTo(-22, "BUS 217 *WEEKDAY ONLY*                ");
-  delay(20000);
-  scroll1(-14, "CENTRAL AVENUE                ");
-  delay(1000);
-  scroll2(-14, "CENTRAL AVENUE                ");
-  delay(500);
-  transferTo(-54, "BUS 240 AND THE BROCKTON AREA TRANSIT AUTHORITY BUS 12                ");
-  delay(20000);
-  scroll1(-11, "VALLEY ROAD                ");
-  delay(1000);
-  scroll2(-11, "VALLEY ROAD                ");
-  delay(20000);
-  scroll1(-12, "CAPEN STREET                ");
-  delay(1000);
-  scroll2(-12, "CAPEN STREET                ");
-  delay(20000);
-  scroll1(-8, "MATTAPAN                ");
-  delay(1000);
-  scroll2(-8, "MATTAPAN                ");
-  delay(500);
-  transferTo(-62, "BUSES 15 24 24/27 27 28 29 30 31 33 245 *WEEKDAY ONLY* AND 716                ");
+  if ((test == 0) or (test == 3) or (test == 4) or (test == 7)) {
+    transferTo(-t.length(), transferto[test]);
+  }
+  delay(5000);
+  lcd.clear();
+  if (test < 7) {
+    test = test + 1;
+  }
+  else {
+    test = 0;
+  }
 }
-
 void scroll1(int x, const char* y) {
   for (int z = 16; z >= x; z--) {
     lcd.clear();
-    lcd.setCursor(z,1);
+    lcd.setCursor(z, 1);
     lcd.print(y);
     lcd.setCursor(0,0);
-    lcd.print("NEXT STATION     ");
-    delay(274);
+    lcd.print("NEXT STOP       ");
+    delay(SCROLL_DELAY);
   }
   lcd.clear();
 }
 
+
 void scroll2(int x, const char* y) {
   for (int z = 16; z >= x; z--) {
     lcd.clear();
-    lcd.setCursor(z,1);
+    lcd.setCursor(z, 1);
     lcd.print(y);
     lcd.setCursor(0,0);
     lcd.print("NOW APPROACHING ");
-    delay(274);
+    delay(SCROLL_DELAY);
   }
   lcd.clear();
 }
@@ -82,11 +81,12 @@ void scroll2(int x, const char* y) {
 void transferTo(int x, const char* y) {
   for (int z = 16; z >= x; z--) {
     lcd.clear();
-    lcd.setCursor(z,1);
+    lcd.setCursor(z, 1);
+    Serial.println(z);
     lcd.print(y);
     lcd.setCursor(0,0);
     lcd.print("TRANSFER TO     ");
-    delay(274);
+    delay(SCROLL_DELAY);
   }
   lcd.clear();
 }
