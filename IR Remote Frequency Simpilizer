@@ -4,18 +4,18 @@
 #define b4 FD28D7
 #define b5 FDA857
 #define b6 FD6897
-#define b7 
-#define b8
-#define b9
-#define b0
-#define bottomarrow
-#define uparrow
-#define leftarrow
-#define rightarrow
-#define enter
-#define save
-#define setup
-#define stopmode
-#define vol-
-#define pause
-#define vol+
+#define b7 FD18E7
+#define b8 FD9867
+#define b9 FD58A7
+#define b0 FD30CF
+#define bottomarrow FDB04F
+#define uparrow FDA05F
+#define leftarrow FD10EF
+#define rightarrow FD50AF
+#define enter FD708F
+#define save FD906F
+#define setup FD20DF
+#define stopmode FD609F
+#define vol- FD00FF
+#define pause FD807F
+#define vol+ FD40BF
