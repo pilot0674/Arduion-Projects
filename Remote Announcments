@@ -1,0 +1,181 @@
+/*
+   IRremote: IRrecvDemo - demonstrates receiving IR codes with IRrecv
+   An IR detector/demodulator must be connected to the input RECV_PIN.
+   Version 0.1 July, 2009
+   Copyright 2009 Ken Shirriff
+   http://arcfn.com
+*/
+#include <LiquidCrystal.h>
+
+#include <IRremote.h>
+#define SCROLL_DELAY 274
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+int RECV_PIN = 7;
+
+IRrecv irrecv(RECV_PIN);
+decode_results results;
+int t = 0;
+int p = 0;
+char stops[8][50] = {
+  "MORTON STREET                ",
+  "FOUR CORNERS / GENEVA AVENUE                ",
+  "TALBOT AVENUE                ",
+  "UPHAMS CORNER                ",
+  "NEWMARKET                ",
+  "NLUE HILL AVENUE                ",
+  "FAIRMOUNT                ",
+  "READVILLE                "
+};
+
+
+void setup()
+{
+  lcd.begin(16, 2);
+  lcd.clear();
+  Serial.begin(9600);
+  Serial.println("Enabling IRin");
+  irrecv.enableIRIn();
+  Serial.println("Enabled IRin");
+}
+//16601263
+//16584943
+//16599223
+//16625743
+
+void loop() {
+  if (irrecv.decode(&results)) {
+    Serial.println(results.value);
+    if (results.value == 16582903) {
+      String s = stops[t];
+      p = 0;
+      scroll1(-s.length() + 16, stops[t]);
+    }
+    if (results.value == 16615543) {
+      p = 1;
+      String s = stops[t];
+      scroll2(-s.length() + 16, stops[t]);
+    }
+    if (results.value == 16599223) {
+      p = 2;
+      String s = stops[t];
+      scroll3(-s.length() + 16, stops[t]);
+    }
+    if (results.value == 16591063) {
+      p = 3;
+      String s = stops[t];
+      scroll4(-s.length() + 16, stops[t]);
+    }
+    if (results.value == 16625743) {
+      if (p == 0) {
+        String s = stops[t];
+        scroll1(-s.length() + 16, stops[t]);
+        delay(10);
+        p++;
+      }
+      if (p == 1) {
+        String s = stops[t];
+        scroll2(-s.length() + 16, stops[t]);
+        delay(10);
+        p++;
+      }
+      if (p == 2) {
+        p++;
+        String s = stops[t];
+        scroll3(-s.length() + 16, stops[t]);
+        delay(10);
+        p++;
+      }
+      if (p == 3) {
+        p++;
+        String s = stops[t];
+        scroll4(-s.length() + 16, stops[t]);
+        delay(10);
+        p++;
+      }
+      if (p == 4) {
+        p = 0;
+        if (t <= 6) {
+          t++;
+        }
+        else {
+          t = 0;
+        }
+        String s = stops[t];
+        scroll1(-s.length() + 16, stops[t]);
+      }
+      String s = stops[t];
+      scroll4(-s.length() + 16, stops[t]);
+    }
+    if (results.value == 16601263) {
+      if (t <= 6) {
+        t++;
+      }
+      else {
+        t = 0;
+      }
+    }
+    if (results.value == 16584943) {
+      if (t >= 1) {
+        t--;
+      }
+      else {
+        t = 7;
+      }
+    }
+    irrecv.resume();
+  }
+
+  delay(100);
+}
+
+void scroll1(int x, const char* y) {
+  for (int z = 16; z >= x; z--) {
+    lcd.clear();
+    lcd.setCursor(z, 1);
+    lcd.print(y);
+    lcd.setCursor(0, 0);
+    lcd.print("NEXT STOP       ");
+    delay(SCROLL_DELAY);
+  }
+  lcd.clear();
+}
+
+
+void scroll2(int x, const char* y) {
+  for (int z = 16; z >= x; z--) {
+    lcd.clear();
+    lcd.setCursor(z, 1);
+    lcd.print(y);
+    lcd.setCursor(0, 0);
+    lcd.print("NOW APPROACHING ");
+    delay(SCROLL_DELAY);
+  }
+  lcd.clear();
+}
+
+void scroll3(int x, const char* y) {
+  for (int z = 16; z >= x; z--) {
+    lcd.clear();
+    lcd.setCursor(z, 1);
+    lcd.print(y);
+    lcd.setCursor(0, 0);
+    lcd.print("NOW ARRIVING AT ");
+    delay(SCROLL_DELAY);
+  }
+  lcd.clear();
+}
+
+
+void scroll4(int x, const char* y) {
+  for (int z = 16; z >= x; z--) {
+    lcd.clear();
+    lcd.setCursor(z, 1);
+    lcd.print(y);
+    lcd.setCursor(0, 0);
+    lcd.print("THIS STOP IS    ");
+    delay(SCROLL_DELAY);
+  }
+  lcd.clear();
+}
+
+
