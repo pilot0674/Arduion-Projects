@@ -1,0 +1,101 @@
+#include <Adafruit_GFX.h>
+#include "Adafruit_LEDBackpack.h"
+Adafruit_7segment matrix = Adafruit_7segment();
+#include <Wire.h>
+#include "DS1307.h"
+float Min;
+float Hour;
+float Time;
+const int minbutton = 1;
+const int hourbutton = 2;
+DS1307 clock;
+void setup() {
+  Serial.begin(9600);
+  matrix.begin(0x70);
+  clock.begin();
+  clock.fillByYMD(2018, 9, 13); //Jan 19,2013
+  clock.fillByHMS(2, 02, 50);
+  clock.fillDayOfWeek(MON);//Saturday
+  clock.setTime();//write time to the RTC ch
+  pinMode(minbutton, INPUT);
+  pinMode(hourbutton, INPUT);
+}
+
+/*Function: Display time on the serial monitor*/
+void printTime() {
+  clock.getTime();
+  Serial.print(clock.hour, DEC);
+  Serial.print(":");
+  Serial.print(clock.minute, DEC);
+  Serial.print(":");
+  Serial.print(clock.second, DEC);
+  Serial.print("	");
+  Serial.print(clock.month, DEC);
+  Serial.print("/");
+  Serial.print(clock.dayOfMonth, DEC);
+  Serial.print("/");
+  Serial.print(clock.year + 2000, DEC);
+  Serial.print(" ");
+  Serial.print(clock.dayOfMonth);
+  Serial.print("*");
+  Min = clock.minute;
+  Hour = clock.hour;
+  Time = Hour + (Min/100);
+  Serial.println(Time);
+  int Minute = digitalRead(minbutton);
+  int hr = digitalRead(hourbutton);
+  if (Minute == HIGH) {
+    if (Min < 59) {
+      Min += 1;
+    }
+    else {
+      Min = 0;
+    }
+    clock.fillByHMS(clock.hour, Min, clock.second);
+    clock.setTime();
+    delay(175);
+  }
+  if (hr == HIGH) {
+    if (Hour < 12) {
+      Hour += 1;
+    }
+    else {
+      Hour = 1;
+    }
+    clock.fillByHMS(Hour, clock.minute, clock.second);
+    clock.setTime();
+    delay(175);
+  }
+  matrix.print(Time);
+  matrix.writeDisplay();
+  switch (clock.dayOfWeek)// Friendly printout the weekday
+  {
+    case MON:
+      Serial.print("MON");
+      break;
+    case TUE:
+      Serial.print("TUE");
+      break;
+    case WED:
+      Serial.print("WED");
+      break;
+    case THU:
+      Serial.print("THU");
+      break;
+    case FRI:
+      Serial.print("FRI");
+      break;
+    case SAT:
+      Serial.print("SAT");
+      break;
+    case SUN:
+      Serial.print("SUN");
+      break;
+  }
+  Serial.println(" ");
+}
+
+void loop() {
+  printTime();
+
+}
