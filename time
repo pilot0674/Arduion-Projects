@@ -13,8 +13,8 @@ void setup() {
   Serial.begin(9600);
   matrix.begin(0x70);
   clock.begin();
-  clock.fillByYMD(2018, 9, 13); //Jan 19,2013
-  clock.fillByHMS(2, 02, 50);
+  clock.fillByYMD(2018, 9, 13);
+  clock.fillByHMS(12, 12, 50);
   clock.fillDayOfWeek(MON);//Saturday
   clock.setTime();//write time to the RTC ch
   pinMode(minbutton, INPUT);
