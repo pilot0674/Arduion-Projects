@@ -52,14 +52,14 @@
    Place a jumper connected to in GND pin on the Motor Driver on the Left side. On 
    the other end, connect the black alagator jumper. Connect the other end of it to
    ground on your Bench Supply.
-   Place a jumper connected to the VCC pin on the Motor Driver. On the other end of 
+   Place a jumper connected to the VIN pin on the Motor Driver. On the other end of 
    the jumper, connect a red alagator jumper. Connect the other end of the red 
    jumper to Power on your Bench supply.
    Connect Ground on your DC fan to B1 OUT on your Motor Driver.
    Connect Power on your DC fan to B2 OUT on your Motor Driver.
    Turn on your Bench Supply and turn Current all the way up and set Voltage to 10.0V
    
-   Your ready to use it!
+   You're ready to use it!
    
    Control the speed of the fan with the Potentiometer.
    
