@@ -11,7 +11,9 @@
    
    Items:
    1 polulu Motor Driver
-   1 DC 5V Fan
+   1 DC 5V Fan (Can also be another type of fan, however it's effectiveness may be affected by how many
+   batteries you include and what the fan's normal current/voltage is. A 12V DC fan runs just fine on 7.5 Volts, or 0.45 Amps,
+   which requires exectly 5 AA batteries.)
    1 Breadboard
    1 MetroMini
    1 Potentiometer
