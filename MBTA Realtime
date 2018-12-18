@@ -1,0 +1,120 @@
+
+#include <ArduinoJson.h>
+#include "application.h"
+#include "HttpClient.h"
+const size_t bufferSize = 5000;//JSON_ARRAY_SIZE(6) + JSON_OBJECT_SIZE(1) + 6*JSON_OBJECT_SIZE(2) + 1000;
+/**
+* Declaring the variables.
+*/
+int y;
+int stop = 0;
+String smallHeadsign = "";
+int standback = false;
+String stopname = "WINTHROP ST @ BROOKS ST - MEDFORD HS";
+HttpClient http;
+
+// Headers currently need to be set at init, useful for API keys etc.
+http_header_t headers[] = {
+    //  { "Content-Type", "application/json" },
+    //  { "Accept" , "application/json" },
+    { "Accept" , "*/*"},
+    { NULL, NULL } // NOTE: Always terminate headers will NULL
+};
+
+http_request_t request;
+http_response_t response;
+
+void b() {
+    // Request path and body can be set at runtime or at setup.
+    request.hostname = "10.1.41.87";
+    request.port = 5001;
+    request.path = "/";
+
+    // The library also supports sending a body with your request:
+    //request.body = "{\"key\":\"value\"}";
+    String s1 = "Middlesex Ave & Seconds St";
+    String ss1 = "";
+    String s2 = "Wellington";
+    String ss2 = "";
+    String s3 = "Wellington via Veterans Swnior Center";
+    String ss3 = "";
+    // Get request
+    int small=999999;
+    http.get(request, response, headers);
+    int j_length = response.body.length()+1;
+    char json[j_length];
+    response.body.toCharArray(json, j_length);
+    DynamicJsonBuffer jsonBuffer(bufferSize);
+    JsonObject& root = jsonBuffer.parseObject(json);
+    int size = root["stuff"].size();
+    for (int x = 0; x <= size-1; x++) {
+        int c = root["stuff"][x]["time"];
+        const char *h = root["stuff"][x]["headsign"];
+        if (!strcmp(h, s1)) {
+            if (c > 0) {
+                ss1+=c + ", ";
+            }
+            else {
+                ss1+="ARRIVING, ";
+            }
+        }
+        else if (!strcmp(h, s2)) {
+            if (c > 0) {
+                ss2+=c + ", ";
+            }
+            else {
+                ss2+="ARRIVING, ";
+            }
+        }
+        else if (!strcmp(h, s3)) {
+            if (c > 0) {
+                ss3+=c + ", ";
+            }
+            else {
+                ss3+="ARRIVING, ";
+            }
+        }
+        if (c <= small) {
+            small = int(c);
+            smallHeadsign = String(h).toUpperCase();
+       }
+    }
+    x(smallHeadsign.toUpperCase(), small, s1, ss1, s2, ss2, s3, ss3);
+}
+
+Timer timer(20000, b);
+void setup() {
+    Serial1.begin(4800);
+        pinMode(D5, INPUT_PULLUP);
+
+    timer.start();
+}
+
+void x(String smllhead, int smll, String a, String b, String c, String d, String e, String f) {
+    y = digitalRead(D5);
+    if (y == HIGH) {
+        if (smllhead == "NOPRED") {
+            Serial1.println("{NO ARRIVALS AT THIS TIME. FOR SCHEDULEING INFORMATION, PLEASE VISIT MBTA.COM}");
+            delay(2000);
+        }
+        else {
+            String departures = "{DEPARTURES: ";
+            if (a != "") {
+                departures+=a + ": ";
+                departures+=b;
+            }
+            if (c != "") {
+                departures+=c + ": ";
+                departures+=d;
+            }
+            if (e != "") {
+                departures+=e + ": ";
+                departures+=f;
+            }
+            departures+="}";
+            Serial1.println(departures);
+        }
+    }
+}
+void loop() {
+}
